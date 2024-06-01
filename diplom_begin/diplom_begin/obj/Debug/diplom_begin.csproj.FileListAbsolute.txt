@@ -1,0 +1,55 @@
+D:\мои работы\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+D:\мои работы\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+D:\мои работы\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+D:\мои работы\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+B:\Загрузки\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
+B:\работа\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+B:\работа\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+B:\работа\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+B:\работа\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+D:\загрузки\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
