@@ -53,3 +53,14 @@ C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_be
 C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
 C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
 C:\Users\Oksana\OneDrive\Рабочий стол\анин\diplom_begin\diplom_begin\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe.config
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\bin\Debug\diplom_begin.exe
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\bin\Debug\diplom_begin.pdb
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.AssemblyReference.cache
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.SuggestedBindingRedirects.cache
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Form1.resources
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.Properties.Resources.resources
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.GenerateResource.cache
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.csproj.CoreCompileInputs.cache
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.exe
+B:\diplom\diplom_ann\diplom_begin\diplom_begin\obj\Debug\diplom_begin.pdb

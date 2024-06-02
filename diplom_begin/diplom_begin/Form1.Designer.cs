@@ -44,6 +44,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label4 = new System.Windows.Forms.Label();
+            this.north = new System.Windows.Forms.Button();
+            this.south = new System.Windows.Forms.Button();
+            this.east = new System.Windows.Forms.Button();
+            this.west = new System.Windows.Forms.Button();
+            this.northeast = new System.Windows.Forms.Button();
+            this.northwest = new System.Windows.Forms.Button();
+            this.southwest = new System.Windows.Forms.Button();
+            this.southeast = new System.Windows.Forms.Button();
+            this.calm = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Location = new System.Drawing.Point(43, 30);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1014, 610);
+            this.pictureBox2.Size = new System.Drawing.Size(1085, 675);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -75,7 +85,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(612, 679);
+            this.button2.Location = new System.Drawing.Point(1159, 411);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -132,7 +142,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 686);
+            this.label3.Location = new System.Drawing.Point(1156, 342);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 20;
@@ -141,10 +151,10 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Location = new System.Drawing.Point(434, 681);
+            this.textBox2.Location = new System.Drawing.Point(1232, 339);
             this.textBox2.MaxLength = 3;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 22);
+            this.textBox2.Size = new System.Drawing.Size(89, 22);
             this.textBox2.TabIndex = 21;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
@@ -153,7 +163,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(431, 684);
+            this.label6.Location = new System.Drawing.Point(1232, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 24;
@@ -165,7 +175,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1146, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,16 +183,125 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 721);
+            this.label4.Location = new System.Drawing.Point(1156, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "скорость ветра, м/с";
             this.label4.Visible = false;
             // 
+            // north
+            // 
+            this.north.Location = new System.Drawing.Point(1225, 90);
+            this.north.Name = "north";
+            this.north.Size = new System.Drawing.Size(60, 30);
+            this.north.TabIndex = 31;
+            this.north.Text = "🡹";
+            this.north.UseVisualStyleBackColor = true;
+            this.north.Click += new System.EventHandler(this.north_Click);
+            // 
+            // south
+            // 
+            this.south.Location = new System.Drawing.Point(1225, 162);
+            this.south.Name = "south";
+            this.south.Size = new System.Drawing.Size(60, 30);
+            this.south.TabIndex = 32;
+            this.south.Text = "🡻";
+            this.south.UseVisualStyleBackColor = true;
+            this.south.Click += new System.EventHandler(this.south_Click);
+            // 
+            // east
+            // 
+            this.east.Location = new System.Drawing.Point(1291, 126);
+            this.east.Name = "east";
+            this.east.Size = new System.Drawing.Size(60, 30);
+            this.east.TabIndex = 33;
+            this.east.Text = "🡺";
+            this.east.UseVisualStyleBackColor = true;
+            this.east.Click += new System.EventHandler(this.east_Click);
+            // 
+            // west
+            // 
+            this.west.Location = new System.Drawing.Point(1159, 126);
+            this.west.Name = "west";
+            this.west.Size = new System.Drawing.Size(60, 30);
+            this.west.TabIndex = 34;
+            this.west.Text = "\t🡸";
+            this.west.UseVisualStyleBackColor = true;
+            this.west.Click += new System.EventHandler(this.west_Click);
+            // 
+            // northeast
+            // 
+            this.northeast.Location = new System.Drawing.Point(1291, 90);
+            this.northeast.Name = "northeast";
+            this.northeast.Size = new System.Drawing.Size(60, 30);
+            this.northeast.TabIndex = 35;
+            this.northeast.Text = "🡽";
+            this.northeast.UseVisualStyleBackColor = true;
+            this.northeast.Click += new System.EventHandler(this.northeast_Click);
+            // 
+            // northwest
+            // 
+            this.northwest.Location = new System.Drawing.Point(1159, 90);
+            this.northwest.Name = "northwest";
+            this.northwest.Size = new System.Drawing.Size(60, 30);
+            this.northwest.TabIndex = 36;
+            this.northwest.Text = "🡼";
+            this.northwest.UseVisualStyleBackColor = true;
+            this.northwest.Click += new System.EventHandler(this.northwest_Click);
+            // 
+            // southwest
+            // 
+            this.southwest.Location = new System.Drawing.Point(1159, 162);
+            this.southwest.Name = "southwest";
+            this.southwest.Size = new System.Drawing.Size(60, 30);
+            this.southwest.TabIndex = 37;
+            this.southwest.Text = "🡿";
+            this.southwest.UseVisualStyleBackColor = true;
+            this.southwest.Click += new System.EventHandler(this.southwest_Click);
+            // 
+            // southeast
+            // 
+            this.southeast.Location = new System.Drawing.Point(1291, 162);
+            this.southeast.Name = "southeast";
+            this.southeast.Size = new System.Drawing.Size(60, 30);
+            this.southeast.TabIndex = 38;
+            this.southeast.Text = "🡾";
+            this.southeast.UseVisualStyleBackColor = true;
+            this.southeast.Click += new System.EventHandler(this.southeast_Click);
+            // 
+            // calm
+            // 
+            this.calm.Location = new System.Drawing.Point(1225, 126);
+            this.calm.Name = "calm";
+            this.calm.Size = new System.Drawing.Size(60, 30);
+            this.calm.TabIndex = 39;
+            this.calm.Text = "🢝";
+            this.calm.UseVisualStyleBackColor = true;
+            this.calm.Click += new System.EventHandler(this.calm_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1156, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 16);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Направление ветра:";
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1146, 804);
+            this.ClientSize = new System.Drawing.Size(1384, 717);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.calm);
+            this.Controls.Add(this.southeast);
+            this.Controls.Add(this.southwest);
+            this.Controls.Add(this.northwest);
+            this.Controls.Add(this.northeast);
+            this.Controls.Add(this.west);
+            this.Controls.Add(this.east);
+            this.Controls.Add(this.south);
+            this.Controls.Add(this.north);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -223,6 +342,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button north;
+        private System.Windows.Forms.Button south;
+        private System.Windows.Forms.Button east;
+        private System.Windows.Forms.Button west;
+        private System.Windows.Forms.Button northeast;
+        private System.Windows.Forms.Button northwest;
+        private System.Windows.Forms.Button southwest;
+        private System.Windows.Forms.Button southeast;
+        private System.Windows.Forms.Button calm;
+        private System.Windows.Forms.Label label2;
     }
 }
 

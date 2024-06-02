@@ -98,6 +98,19 @@ namespace diplom_begin
             Color.FromArgb(10, 255, 10),   Color.FromArgb(0, 255, 0)
         };
 
+        private (int x, int y)[] neighbourhood = {
+            (0, 0),  // штиль 0
+            (0, 1),  // север 1 
+            (1, 1),  // северо-восток 2
+            (1, 0),  // восток 3
+            (1, -1), // юго-восток 4
+            (0, -1),  // юг 5
+            (-1, -1), // юго-запад 6
+            (-1, 0),  // запад 7
+            (-1, 1)   // северо-запад 8
+        };
+
+        private (int x, int y) selectedWindDirection = (0, 0);
 
         private int nx = 1, ny = 1, ia = 1, ja = 1, ib = 1, jb = 1;
         private int[,] X, count;
@@ -123,6 +136,51 @@ namespace diplom_begin
                 IsWall = isWall;
                 Price = isWall ? 0 : price; ; 
             }
+        }
+
+        private void north_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[1];
+        }
+
+        private void southeast_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[4];
+        }
+
+        private void southwest_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[6];
+        }
+
+        private void northwest_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[8];
+        }
+
+        private void northeast_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[2];
+        }
+
+        private void east_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[3];
+        }
+
+        private void west_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[7];
+        }
+
+        private void south_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[5];
+        }
+
+        private void calm_Click(object sender, EventArgs e)
+        {
+            selectedWindDirection = neighbourhood[0];
         }
 
         public class AStar // алгоритм просчета пути A*
@@ -176,7 +234,7 @@ namespace diplom_begin
                 }
                 return neighbor;
             }
-            public List<Node> FindPath(Node startNode, Node endNode)
+            public List<Node> FindPath(Node startNode, Node endNode, int windX, int windY)
             {
                 if (startNode == null || endNode == null)
                 {
@@ -184,7 +242,6 @@ namespace diplom_begin
                     form.label4.Text = "Не выбраны точки отправления и прибытия.";
                     form.label4.Visible = true;
                     form.timer1.Stop();
-
                 }
 
                 _openList.Add(startNode);
@@ -199,19 +256,15 @@ namespace diplom_begin
                     }
                     foreach (Node neighbor in GetNeighbors(currentNode))
                     {
-                        if (neighbor != null && (neighbor.IsWall ||
-                        _closedList.Contains(neighbor)))
+                        if (neighbor != null && (neighbor.IsWall || _closedList.Contains(neighbor)))
                         {
                             continue;
                         }
-                        int newGCost = currentNode.GCost +
-                        GetDistance(currentNode, neighbor);
-                        if (newGCost < neighbor.GCost ||
-                        !_openList.Contains(neighbor))
+                        int newGCost = currentNode.GCost + GetDistance(currentNode, neighbor, windX, windY);
+                        if (newGCost < neighbor.GCost || !_openList.Contains(neighbor))
                         {
                             neighbor.GCost = newGCost;
-                            neighbor.HCost = GetDistance(neighbor,
-                            endNode);
+                            neighbor.HCost = GetDistance(neighbor, endNode, windX, windY);
                             neighbor.Parent = currentNode;
                             if (!_openList.Contains(neighbor))
                             {
@@ -222,6 +275,7 @@ namespace diplom_begin
                 }
                 return null;
             }
+            // 
             private Node GetLowestFCostNode(List<Node> nodes)
             {
                 Node lowestFCostNode = nodes[0];
@@ -235,20 +289,53 @@ namespace diplom_begin
                 return lowestFCostNode;
             }
 
-            private int GetDistance(Node nodeA, Node nodeB)
+            // Ищем дистанцию от текущей клетки до конечной
+            private int GetDistance(Node nodeA, Node nodeB, int windX, int windY)
             {
                 int distanceX = Math.Abs(nodeA.X - nodeB.X);
                 int distanceY = Math.Abs(nodeA.Y - nodeB.Y);
+                int baseCost;
+
                 if (distanceX > distanceY)
                 {
-                    return 14 * distanceY + 10 * (distanceX -
-                    distanceY);
+                    baseCost = 14 * distanceY + 10 * (distanceX - distanceY);
                 }
                 else
                 {
-                    return 14 * distanceX + 10 * (distanceY -
-                    distanceX);
+                    baseCost = 14 * distanceX + 10 * (distanceY - distanceX);
                 }
+
+                // Рассчитываем направление движения
+                int moveX = nodeB.X - nodeA.X;
+                int moveY = nodeB.Y - nodeA.Y;
+
+                // Рассчитываем скалярное произведение направления движения и направления ветра
+                int dotProduct = (moveX * windX) + (moveY * windY);
+
+                // Нормируем векторы
+                double moveLength = Math.Sqrt(moveX * moveX + moveY * moveY);
+                double windLength = Math.Sqrt(windX * windX + windY * windY);
+
+                double cosTheta = dotProduct / (moveLength * windLength);
+
+                // Определяем коэффициент в зависимости от угла
+                double windFactor;
+                if (cosTheta > 0.5) // По ветру
+                {
+                    windFactor = 0.8; // Пример коэффициента, уменьшающего стоимость
+                }
+                else if (cosTheta < -0.5) // Против ветра
+                {
+                    windFactor = 1.2; // Пример коэффициента, увеличивающего стоимость
+                }
+                else
+                {
+                    windFactor = 1.0; // Ветер влияет нейтрально
+                }
+
+                // Применяем коэффициент влияния ветра
+                double adjustedCost = baseCost * windFactor;
+                return (int)adjustedCost;
             }
             private List<Node> GetPath(Node endNode)
             {
@@ -711,7 +798,7 @@ namespace diplom_begin
             }
             else
             {
-                List<Node> path = aStar.FindPath(grid[ia, ja], grid[ib, jb]);
+                List<Node> path = aStar.FindPath(grid[ia, ja], grid[ib, jb], selectedWindDirection.x, selectedWindDirection.y);
                 List<Node> neighbor = new List<Node>();
                 if (grid[ib, jb].X > 0)
                 {
