@@ -24,65 +24,35 @@ namespace diplom_begin
             WATER_24_SAFE = 30, WATER_25_SAFE = 31, WATER_26_SAFE = 32,
 
             // Водные объекты разной глубины с погодными условиями средней опасности
-            WATER_1_NORMAL = 33,  WATER_2_NORMAL = 34,
-            WATER_3_NORMAL = 35,  WATER_4_NORMAL = 36,  WATER_5_NORMAL = 37,
-            WATER_6_NORMAL = 38,  WATER_7_NORMAL = 39,  WATER_8_NORMAL = 40, 
-            WATER_9_NORMAL = 41,  WATER_10_NORMAL = 42, WATER_11_NORMAL = 43, 
-            WATER_12_NORMAL = 44, WATER_13_NORMAL = 45, WATER_14_NORMAL = 46, 
-            WATER_15_NORMAL = 47, WATER_16_NORMAL = 48, WATER_17_NORMAL = 49, 
-            WATER_18_NORMAL = 50, WATER_19_NORMAL = 51, WATER_20_NORMAL = 52, 
-            WATER_21_NORMAL = 53, WATER_22_NORMAL = 54, WATER_23_NORMAL = 55, 
-            WATER_24_NORMAL = 56, WATER_25_NORMAL = 57, WATER_26_NORMAL = 58,
+            WATER_1_DANGER = 33, WATER_2_DANGER = 34,
+            WATER_3_DANGER = 35, WATER_4_DANGER = 36, WATER_5_DANGER = 37,
+            WATER_6_DANGER = 38, WATER_7_DANGER = 39, WATER_8_DANGER = 40,
+            WATER_9_DANGER = 41, WATER_10_DANGER = 42, WATER_11_DANGER = 43,
+            WATER_12_DANGER = 44, WATER_13_DANGER = 45, WATER_14_DANGER = 46,
+            WATER_15_DANGER = 47, WATER_16_DANGER = 48, WATER_17_DANGER = 49,
+            WATER_18_DANGER = 50, WATER_19_DANGER = 51, WATER_20_DANGER = 52,
+            WATER_21_DANGER = 53, WATER_22_DANGER = 54, WATER_23_DANGER = 55,
+            WATER_24_DANGER = 56, WATER_25_DANGER = 57, WATER_26_DANGER = 58,
 
             // Водные объекты разной глубины с опасными погодными условиями 
-            WATER_1_DANGER = 59,  WATER_2_DANGER = 60,
-            WATER_3_DANGER = 61,  WATER_4_DANGER = 62,  WATER_5_DANGER = 63,
-            WATER_6_DANGER = 64,  WATER_7_DANGER = 65,  WATER_8_DANGER = 66,
-            WATER_9_DANGER = 67,  WATER_10_DANGER = 68, WATER_11_DANGER = 69,
-            WATER_12_DANGER = 70, WATER_13_DANGER = 71, WATER_14_DANGER = 72,
-            WATER_15_DANGER = 73, WATER_16_DANGER = 74, WATER_17_DANGER = 75,
-            WATER_18_DANGER = 76, WATER_19_DANGER = 77, WATER_20_DANGER = 78,
-            WATER_21_DANGER = 79, WATER_22_DANGER = 80, WATER_23_DANGER = 81,
-            WATER_24_DANGER = 82, WATER_25_DANGER = 83, WATER_26_DANGER = 84;
+            WATER_1_NORMAL = 59, WATER_2_NORMAL = 60,
+            WATER_3_NORMAL = 61, WATER_4_NORMAL = 62, WATER_5_NORMAL = 63,
+            WATER_6_NORMAL = 64, WATER_7_NORMAL = 65, WATER_8_NORMAL = 66,
+            WATER_9_NORMAL = 67, WATER_10_NORMAL = 68, WATER_11_NORMAL = 69,
+            WATER_12_NORMAL = 70, WATER_13_NORMAL = 71, WATER_14_NORMAL = 72,
+            WATER_15_NORMAL = 73, WATER_16_NORMAL = 74, WATER_17_NORMAL = 75,
+            WATER_18_NORMAL = 76, WATER_19_NORMAL = 77, WATER_20_NORMAL = 78,
+            WATER_21_NORMAL = 79, WATER_22_NORMAL = 80, WATER_23_NORMAL = 81,
+            WATER_24_NORMAL = 82, WATER_25_NORMAL = 83, WATER_26_NORMAL = 84;
 
         private readonly Color[] colorsList = //цвета объектов в RGB
         {
             // Цвета объектов природы не используещихся для движения
-            Color.FromArgb(185, 122, 87), Color.FromArgb(181, 230 ,29), Color.FromArgb(239, 228, 176), Color.FromArgb(195, 195, 195),
+            Color.FromArgb(185, 122, 87), Color.FromArgb(181, 230 ,29), Color.FromArgb(197, 173, 104), Color.FromArgb(195, 195, 195),
             // Цвета точек начала, конца, путь
-            Color.FromArgb(255, 0, 0), Color.FromArgb(254, 0, 0), Color.FromArgb(0, 255, 0),
+            Color.FromArgb(2, 0, 254), Color.FromArgb(3, 0, 253), Color.FromArgb(1, 0, 255),
             
             // Цвета водных объектов разной глубины с безопасными погодными условиями
-            Color.FromArgb(250, 250, 255), Color.FromArgb(240, 240, 255),
-            Color.FromArgb(230, 230, 255), Color.FromArgb(220, 220, 255),
-            Color.FromArgb(210, 210, 255), Color.FromArgb(200, 200, 255),
-            Color.FromArgb(190, 190, 255), Color.FromArgb(180, 180, 255),
-            Color.FromArgb(170, 170, 255), Color.FromArgb(160, 160, 255),
-            Color.FromArgb(150, 150, 255), Color.FromArgb(140, 140, 255),
-            Color.FromArgb(130, 130, 255), Color.FromArgb(120, 120, 255),
-            Color.FromArgb(110, 110, 255), Color.FromArgb(100, 100, 255),
-            Color.FromArgb(90, 90, 255),   Color.FromArgb(80, 80, 255),
-            Color.FromArgb(70, 70, 255),   Color.FromArgb(60, 60, 255),
-            Color.FromArgb(50, 50, 255),   Color.FromArgb(40, 40, 255),
-            Color.FromArgb(30, 30, 255),   Color.FromArgb(20, 20, 255),
-            Color.FromArgb(10, 10, 255),   Color.FromArgb(0, 0, 255),
-            
-            // Цвета водных объектов разной глубины с погодными условиями средней опасности
-            Color.FromArgb(255, 255, 250), Color.FromArgb(255, 255, 240),
-            Color.FromArgb(255, 255, 230), Color.FromArgb(255, 255, 220),
-            Color.FromArgb(255, 255, 210), Color.FromArgb(255, 255, 200),
-            Color.FromArgb(255, 255, 190), Color.FromArgb(255, 255, 180),
-            Color.FromArgb(255, 255, 170), Color.FromArgb(255, 255, 160),
-            Color.FromArgb(255, 255, 150), Color.FromArgb(255, 255, 140),
-            Color.FromArgb(255, 255, 130), Color.FromArgb(255, 255, 120),
-            Color.FromArgb(255, 255, 110), Color.FromArgb(255, 255, 100),
-            Color.FromArgb(255, 255, 90), Color.FromArgb(255, 255, 80),
-            Color.FromArgb(255, 255, 70), Color.FromArgb(255, 255, 60),
-            Color.FromArgb(255, 255, 50), Color.FromArgb(255, 255, 40),
-            Color.FromArgb(255, 255, 30), Color.FromArgb(255, 255, 20),
-            Color.FromArgb(255, 255, 10), Color.FromArgb(255, 255, 0),
-
-            // Цвета водных объектов разной глубины с опасными погодными условиями 
             Color.FromArgb(250, 255, 250), Color.FromArgb(240, 255, 240),
             Color.FromArgb(230, 255, 230), Color.FromArgb(220, 255, 220),
             Color.FromArgb(210, 255, 210), Color.FromArgb(200, 255, 200),
@@ -95,7 +65,37 @@ namespace diplom_begin
             Color.FromArgb(70, 255, 70),   Color.FromArgb(60, 255, 60),
             Color.FromArgb(50, 255, 50),   Color.FromArgb(40, 255, 40),
             Color.FromArgb(30, 255, 30),   Color.FromArgb(20, 255, 20),
-            Color.FromArgb(10, 255, 10),   Color.FromArgb(0, 255, 0)
+            Color.FromArgb(10, 255, 10),   Color.FromArgb(0, 255, 0),
+
+            // Цвета водных объектов разной глубины с опасными погодными условиями
+            Color.FromArgb(255, 250, 250), Color.FromArgb(254, 240, 240),
+            Color.FromArgb(253, 230, 230), Color.FromArgb(252, 220, 220),
+            Color.FromArgb(251, 210, 210), Color.FromArgb(249, 200, 200),
+            Color.FromArgb(248, 190, 190), Color.FromArgb(247, 180, 180),
+            Color.FromArgb(246, 170, 170), Color.FromArgb(245, 160, 160),
+            Color.FromArgb(244, 150, 150), Color.FromArgb(243, 140, 140),
+            Color.FromArgb(242, 130, 130), Color.FromArgb(241, 120, 120),
+            Color.FromArgb(239, 110, 110), Color.FromArgb(238, 100, 100),
+            Color.FromArgb(237, 90, 90),   Color.FromArgb(236, 80, 80),
+            Color.FromArgb(235, 70, 70),   Color.FromArgb(234, 60, 60),
+            Color.FromArgb(233, 50, 50),   Color.FromArgb(232, 40, 40),
+            Color.FromArgb(231, 30, 30),   Color.FromArgb(229, 20, 20),
+            Color.FromArgb(228, 10, 10),   Color.FromArgb(227, 0, 0),
+
+            // Цвета водных объектов разной глубины с погодными условиями средней опасности
+            Color.FromArgb(226, 255, 250), Color.FromArgb(225, 255, 240),
+            Color.FromArgb(224, 255, 230), Color.FromArgb(223, 255, 220),
+            Color.FromArgb(222, 255, 210), Color.FromArgb(221, 255, 200),
+            Color.FromArgb(219, 255, 190), Color.FromArgb(218, 255, 180),
+            Color.FromArgb(217, 255, 170), Color.FromArgb(216, 255, 160),
+            Color.FromArgb(215, 255, 150), Color.FromArgb(214, 255, 140),
+            Color.FromArgb(213, 255, 130), Color.FromArgb(212, 255, 120),
+            Color.FromArgb(211, 255, 110), Color.FromArgb(209, 255, 100),
+            Color.FromArgb(208, 255, 90),  Color.FromArgb(207, 255, 80),
+            Color.FromArgb(206, 255, 70),  Color.FromArgb(205, 255, 60),
+            Color.FromArgb(204, 255, 50),  Color.FromArgb(203, 255, 40),
+            Color.FromArgb(202, 255, 30),  Color.FromArgb(201, 255, 20),
+            Color.FromArgb(199, 255, 10),  Color.FromArgb(198, 255, 0)
         };
 
         private (int x, int y)[] neighbourhood = {
@@ -117,6 +117,9 @@ namespace diplom_begin
         private Node[,] grid;
         private double osad = 3;
         private bool isFirstClick = true;
+        private double safe_wind = 1;
+        private double normal_wind = 1;
+        private double danger_wind = 1;
 
         public class Node
         {
@@ -232,12 +235,12 @@ namespace diplom_begin
                 {
                     neighbor.Add(_grid[node.X - 1, node.Y + 1]);
                 }
-                return neighbor;
+                return neighbor;            
             }
             public List<Node> FindPath(Node startNode, Node endNode, int windX, int windY)
             {
                 if (startNode == null || endNode == null)
-                {
+                { 
                     Form1 form = new Form1();
                     form.label4.Text = "Не выбраны точки отправления и прибытия.";
                     form.label4.Visible = true;
@@ -356,8 +359,7 @@ namespace diplom_begin
             InitializeComponent();
         }
 
-        private void textBox2_KeyPress(object sender,
-        KeyPressEventArgs e) // обработчик для поля ввода осадки
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
             {
@@ -400,13 +402,142 @@ namespace diplom_begin
             }
         }
 
+        private void safeWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                int value;
+                if (Int32.TryParse(safeWind.Text + e.KeyChar, out
+                value)) // пытаемся преобразовать текст в число
+                {
+                    if (value < 0 || value > 24) // проверяем значений
+                    {
+                        if (e.KeyChar != '\b') // \b - backspace
+                        {
+                            e.Handled = true; // отменяем ввод символа
+                        }
+                    }
+                }
+                else
+                {
+                    if (e.KeyChar != '\b') // \b - backspace
+                    {
+                        e.Handled = true; // отменяем ввод символа
+                    }
+                }
+            }
+        }
+        private void safeWind_KeyDown(object sender, KeyEventArgs e)
+        // завершение редактирования поля ввода осадки
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string perem = safeWind.Text;
+                safe_wind = (double)(double.Parse(perem));
+                label6.Text = perem;
+                label6.Visible = true;
+                safeWind.Visible = false;
+                button2.Visible = true;
+            }
+        }
+
+        private void normalWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                int value;
+                if (Int32.TryParse(normalWind.Text + e.KeyChar, out
+                value)) // пытаемся преобразовать текст в число
+                {
+                    if (value < 0 || value > 24) // проверяем значений
+                    {
+                        if (e.KeyChar != '\b') // \b - backspace
+                        {
+                            e.Handled = true; // отменяем ввод символа
+                        }
+                    }
+                }
+                else
+                {
+                    if (e.KeyChar != '\b') // \b - backspace
+                    {
+                        e.Handled = true; // отменяем ввод символа
+                    }
+                }
+            }
+        }
+        private void normalWind_KeyDown(object sender, KeyEventArgs e)
+        // завершение редактирования поля ввода осадки
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string perem = normalWind.Text;
+                normal_wind = (double)(double.Parse(perem));
+                label6.Text = perem;
+                label6.Visible = true;
+                normalWind.Visible = false;
+                button2.Visible = true;
+            }
+        }
+
+        private void dangerWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                int value;
+                if (Int32.TryParse(dangerWind.Text + e.KeyChar, out
+                value)) // пытаемся преобразовать текст в число
+                {
+                    if (value < 0 || value > 24) // проверяем значений
+                    {
+                        if (e.KeyChar != '\b') // \b - backspace
+                        {
+                            e.Handled = true; // отменяем ввод символа
+                        }
+                    }
+                }
+                else
+                {
+                    if (e.KeyChar != '\b') // \b - backspace
+                    {
+                        e.Handled = true; // отменяем ввод символа
+                    }
+                }
+            }
+        }
+        private void dangerWind_KeyDown(object sender, KeyEventArgs e)
+        // завершение редактирования поля ввода осадки
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string perem = dangerWind.Text;
+                danger_wind = (double)(double.Parse(perem));
+                label6.Text = perem;
+                label6.Visible = true;
+                dangerWind.Visible = false;
+                button2.Visible = true;
+            }
+        }
+
         private void pictureBox2_MouseDown(object sender,
         MouseEventArgs e) // установка точек начала и конца 
         {
             Bitmap bmp = (Bitmap)pictureBox2.Image;
             double scaleX = (double)((double)pictureBox2.Width / (double)pictureBox2.Image.Width);
             double scaleY = (double)((double)pictureBox2.Height / (double)pictureBox2.Image.Height);
-            bmp.SetPixel((int)(e.X / scaleX), (int)(e.Y / scaleY), Color.Red);
+            bmp.SetPixel((int)(e.X / scaleX), (int)(e.Y / scaleY), Color.Blue);
             if (isFirstClick)
             {
                 // устанавливаем первый объект
@@ -446,171 +577,352 @@ namespace diplom_begin
                     for (var j = 0; j < ny; j++)
                     {
                         Pix[i, j] = images.GetPixel(i, j);
-                        if (Pix[i, j].R == 185)
+                        switch (Pix[i, j].R)
                         {
-                            X[i, j] = DIRT;
-                            count[i, j] = 0;
+                            case 185:
+                                X[i, j] = DIRT;
+                                count[i, j] = 0;
+                                break;
+                            case 181: 
+                                X[i, j] = TREE;
+                                count[i, j] = 0;
+                                break;
+                            case 197: 
+                                X[i, j] = SAND;
+                                count[i, j] = 0;
+                                break;
+                            case 195: 
+                                X[i, j] = ROAD;
+                                count[i, j] = 0;
+                                break;
+                            case 250: 
+                                X[i, j] = WATER_1_SAFE;
+                                count[i, j] = 0;
+                                break;
+                            case 240: 
+                                X[i, j] = WATER_2_SAFE;
+                                count[i, j] = 1;
+                                break;
+                            case 230:
+                                X[i, j] = WATER_3_SAFE;
+                                count[i, j] = 2;
+                                break;
+                            case 220:
+                                X[i, j] = WATER_4_SAFE;
+                                count[i, j] = 3;
+                                break;
+                            case 210:
+                                X[i, j] = WATER_5_SAFE;
+                                count[i, j] = 4;
+                                break;
+                            case 200:
+                                X[i, j] = WATER_6_SAFE;
+                                count[i, j] = 5;
+                                break;
+                            case 190:
+                                X[i, j] = WATER_7_SAFE;
+                                count[i, j] = 6;
+                                break;
+                            case 180:
+                                X[i, j] = WATER_8_SAFE;
+                                count[i, j] = 7;
+                                break;
+                            case 170:
+                                X[i, j] = WATER_9_SAFE;
+                                count[i, j] = 8;
+                                break;
+                            case 160:
+                                X[i, j] = WATER_10_SAFE;
+                                count[i, j] = 9;
+                                break;
+                            case 150:
+                                X[i, j] = WATER_11_SAFE;
+                                count[i, j] = 10;
+                                break;
+                            case 140:
+                                X[i, j] = WATER_12_SAFE;
+                                count[i, j] = 11;
+                                break;
+                            case 130:
+                                X[i, j] = WATER_13_SAFE;
+                                count[i, j] = 12;
+                                break;
+                            case 120:
+                                X[i, j] = WATER_14_SAFE;
+                                count[i, j] = 13;
+                                break;
+                            case 110:
+                                X[i, j] = WATER_15_SAFE;
+                                count[i, j] = 14;
+                                break;
+                            case 100:
+                                X[i, j] = WATER_16_SAFE;
+                                count[i, j] = 15;
+                                break;
+                            case 90:
+                                X[i, j] = WATER_17_SAFE;
+                                count[i, j] = 16;
+                                break;
+                            case 80:
+                                X[i, j] = WATER_18_SAFE;
+                                count[i, j] = 17;
+                                break;
+                            case 70:
+                                X[i, j] = WATER_19_SAFE;
+                                count[i, j] = 18;
+                                break;
+                            case 60:
+                                X[i, j] = WATER_20_SAFE;
+                                count[i, j] = 19;
+                                break;
+                            case 50:
+                                X[i, j] = WATER_21_SAFE;
+                                count[i, j] = 20;
+                                break;
+                            case 40:
+                                X[i, j] = WATER_22_SAFE;
+                                count[i, j] = 21;
+                                break;
+                            case 30:
+                                X[i, j] = WATER_23_SAFE;
+                                count[i, j] = 22;
+                                break;
+                            case 20:
+                                X[i, j] = WATER_24_SAFE;
+                                count[i, j] = 23;
+                                break;
+                            case 10:
+                                X[i, j] = WATER_25_SAFE;
+                                count[i, j] = 24;
+                                break;
+                            case 0:
+                                X[i, j] = WATER_26_SAFE;
+                                count[i, j] = 25;
+                                break;
+                            case 2:
+                                X[i, j] = DOT_A;
+                                count[i, j] = 25;
+                                break;
+                            case 3:
+                                X[i, j] = DOT_B;
+                                count[i, j] = 25;
+                                break;
+                            case 1:
+                                X[i, j] = WAY;
+                                count[i, j] = 25;
+                                break;
+                            case 226:
+                                X[i, j] = WATER_1_NORMAL;
+                                count[i, j] = 0;
+                                break;
+                            case 225:
+                                X[i, j] = WATER_2_NORMAL;
+                                count[i, j] = 1;
+                                break;
+                            case 224:
+                                X[i, j] = WATER_3_NORMAL;
+                                count[i, j] = 2;
+                                break;
+                            case 223:
+                                X[i, j] = WATER_4_NORMAL;
+                                count[i, j] = 3;
+                                break;
+                            case 222:
+                                X[i, j] = WATER_5_NORMAL;
+                                count[i, j] = 4;
+                                break;
+                            case 221:
+                                X[i, j] = WATER_6_NORMAL;
+                                count[i, j] = 5;
+                                break;
+                            case 219:
+                                X[i, j] = WATER_7_NORMAL;
+                                count[i, j] = 6;
+                                break;
+                            case 218:
+                                X[i, j] = WATER_8_NORMAL;
+                                count[i, j] = 7;
+                                break;
+                            case 217:
+                                X[i, j] = WATER_9_NORMAL;
+                                count[i, j] = 8;
+                                break;
+                            case 216:
+                                X[i, j] = WATER_10_NORMAL;
+                                count[i, j] = 9;
+                                break;
+                            case 215:
+                                X[i, j] = WATER_11_NORMAL;
+                                count[i, j] = 10;
+                                break;
+                            case 214:
+                                X[i, j] = WATER_12_NORMAL;
+                                count[i, j] = 11;
+                                break;
+                            case 213:
+                                X[i, j] = WATER_13_NORMAL;
+                                count[i, j] = 12;
+                                break;
+                            case 212:
+                                X[i, j] = WATER_14_NORMAL;
+                                count[i, j] = 13;
+                                break;
+                            case 211:
+                                X[i, j] = WATER_15_NORMAL;
+                                count[i, j] = 14;
+                                break;
+                            case 209:
+                                X[i, j] = WATER_16_NORMAL;
+                                count[i, j] = 15;
+                                break;
+                            case 208:
+                                X[i, j] = WATER_17_NORMAL;
+                                count[i, j] = 16;
+                                break;
+                            case 207:
+                                X[i, j] = WATER_18_NORMAL;
+                                count[i, j] = 17;
+                                break;
+                            case 206:
+                                X[i, j] = WATER_19_NORMAL;
+                                count[i, j] = 18;
+                                break;
+                            case 205:
+                                X[i, j] = WATER_20_NORMAL;
+                                count[i, j] = 19;
+                                break;
+                            case 204:
+                                X[i, j] = WATER_21_NORMAL;
+                                count[i, j] = 20;
+                                break;
+                            case 203:
+                                X[i, j] = WATER_22_NORMAL;
+                                count[i, j] = 21;
+                                break;
+                            case 202:
+                                X[i, j] = WATER_23_NORMAL;
+                                count[i, j] = 22;
+                                break;
+                            case 201:
+                                X[i, j] = WATER_24_NORMAL;
+                                count[i, j] = 23;
+                                break;
+                            case 199:
+                                X[i, j] = WATER_25_NORMAL;
+                                count[i, j] = 24;
+                                break;
+                            case 198:
+                                X[i, j] = WATER_26_NORMAL;
+                                count[i, j] = 25;
+                                break;
+                            case 255:
+                                X[i, j] = WATER_1_DANGER;
+                                count[i, j] = 0;
+                                break;
+                            case 254:
+                                X[i, j] = WATER_2_DANGER;
+                                count[i, j] = 1;
+                                break;
+                            case 253:
+                                X[i, j] = WATER_3_DANGER;
+                                count[i, j] = 2;
+                                break;
+                            case 252:
+                                X[i, j] = WATER_4_DANGER;
+                                count[i, j] = 3;
+                                break;
+                            case 251:
+                                X[i, j] = WATER_5_DANGER;
+                                count[i, j] = 4;
+                                break;
+                            case 249:
+                                X[i, j] = WATER_6_DANGER;
+                                count[i, j] = 5;
+                                break;
+                            case 248:
+                                X[i, j] = WATER_7_DANGER;
+                                count[i, j] = 6;
+                                break;
+                            case 247:
+                                X[i, j] = WATER_8_DANGER;
+                                count[i, j] = 7;
+                                break;
+                            case 246:
+                                X[i, j] = WATER_9_DANGER;
+                                count[i, j] = 8;
+                                break;
+                            case 245:
+                                X[i, j] = WATER_10_DANGER;
+                                count[i, j] = 9;
+                                break;
+                            case 244:
+                                X[i, j] = WATER_11_DANGER;
+                                count[i, j] = 10;
+                                break;
+                            case 243:
+                                X[i, j] = WATER_12_DANGER;
+                                count[i, j] = 11;
+                                break;
+                            case 242:
+                                X[i, j] = WATER_13_DANGER;
+                                count[i, j] = 12;
+                                break;
+                            case 241:
+                                X[i, j] = WATER_14_DANGER;
+                                count[i, j] = 13;
+                                break;
+                            case 239:
+                                X[i, j] = WATER_15_DANGER;
+                                count[i, j] = 14;
+                                break;
+                            case 238:
+                                X[i, j] = WATER_16_DANGER;
+                                count[i, j] = 15;
+                                break;
+                            case 237:
+                                X[i, j] = WATER_17_DANGER;
+                                count[i, j] = 16;
+                                break;
+                            case 236:
+                                X[i, j] = WATER_18_DANGER;
+                                count[i, j] = 17;
+                                break;
+                            case 235:
+                                X[i, j] = WATER_19_DANGER;
+                                count[i, j] = 18;
+                                break;
+                            case 234:
+                                X[i, j] = WATER_20_DANGER;
+                                count[i, j] = 19;
+                                break;
+                            case 233:
+                                X[i, j] = WATER_21_DANGER;
+                                count[i, j] = 20;
+                                break;
+                            case 232:
+                                X[i, j] = WATER_22_DANGER;
+                                count[i, j] = 21;
+                                break;
+                            case 231:
+                                X[i, j] = WATER_23_DANGER;
+                                count[i, j] = 22;
+                                break;
+                            case 229:
+                                X[i, j] = WATER_24_DANGER;
+                                count[i, j] = 23;
+                                break;
+                            case 228:
+                                X[i, j] = WATER_25_DANGER;
+                                count[i, j] = 24;
+                                break;
+                            case 227:
+                                X[i, j] = WATER_26_DANGER;
+                                count[i, j] = 25;
+                                break;
+                            default:
+                                break;
                         }
-                        if (Pix[i, j].R == 181)
-                        {
-                            X[i, j] = TREE;
-                            count[i, j] = 0;
-                        }
-                        if (Pix[i, j].R == 239)
-                        {
-                            X[i, j] = SAND;
-                            count[i, j] = 0;
-                        }
-                        if (Pix[i, j].R == 195)
-                        {
-                            X[i, j] = ROAD;
-                            count[i, j] = 0;
-                        }
-                        if (Pix[i, j].R == 250)
-                        {
-                            X[i, j] = WATER_1_SAFE;
-                            count[i, j] = 0;
-                        }
-                        if (Pix[i, j].R == 240)
-                        {
-                            X[i, j] = WATER_2_SAFE;
-                            count[i, j] = 1;
-                        }
-                        if (Pix[i, j].R == 230)
-                        {
-                            X[i, j] = WATER_3_SAFE;
-                            count[i, j] = 2;
-                        }
-                        if (Pix[i, j].R == 220)
-                        {
-                            X[i, j] = WATER_4_SAFE;
-                            count[i, j] = 3;
-                        }
-                        if (Pix[i, j].R == 210)
-                        {
-                            X[i, j] = WATER_5_SAFE;
-                            count[i, j] = 4;
-                        }
-                        if (Pix[i, j].R == 200)
-                        {
-                            X[i, j] = WATER_6_SAFE;
-                            count[i, j] = 5;
-                        }
-                        if (Pix[i, j].R == 190)
-                        {
-                            X[i, j] = WATER_7_SAFE;
-                            count[i, j] = 6;
-                        }
-                        if (Pix[i, j].R == 180)
-                        {
-                            X[i, j] = WATER_8_SAFE;
-                            count[i, j] = 7;
-                        }
-                        if (Pix[i, j].R == 170)
-                        {
-                            X[i, j] = WATER_9_SAFE;
-                            count[i, j] = 8;
-                        }
-                        if (Pix[i, j].R == 160)
-                        {
-                            X[i, j] = WATER_10_SAFE;
-                            count[i, j] = 9;
-                        }
-                        if (Pix[i, j].R == 150)
-                        {
-                            X[i, j] = WATER_11_SAFE;
-                            count[i, j] = 10;
-                        }
-                        if (Pix[i, j].R == 140)
-                        {
-                            X[i, j] = WATER_12_SAFE;
-                            count[i, j] = 11;
-                        }
-                        if (Pix[i, j].R == 130)
-                        {
-                            X[i, j] = WATER_13_SAFE;
-                            count[i, j] = 12;
-                        }
-                        if (Pix[i, j].R == 120)
-                        {
-                            X[i, j] = WATER_14_SAFE;
-                            count[i, j] = 13;
-                        }
-                        if (Pix[i, j].R == 110)
-                        {
-                            X[i, j] = WATER_15_SAFE;
-                            count[i, j] = 14;
-                        }
-                        if (Pix[i, j].R == 100)
-                        {
-                            X[i, j] = WATER_16_SAFE;
-                            count[i, j] = 15;
-                        }
-                        if (Pix[i, j].R == 90)
-                        {
-                            X[i, j] = WATER_17_SAFE;
-                            count[i, j] = 16;
-                        }
-                        if (Pix[i, j].R == 80)
-                        {
-                            X[i, j] = WATER_18_SAFE;
-                            count[i, j] = 17;
-                        }
-                        if (Pix[i, j].R == 70)
-                        {
-                            X[i, j] = WATER_19_SAFE;
-                            count[i, j] = 18;
-                        }
-                        if (Pix[i, j].R == 60)
-                        {
-                            X[i, j] = WATER_20_SAFE;
-                            count[i, j] = 19;
-                        }
-                        if (Pix[i, j].R == 50)
-                        {
-                            X[i, j] = WATER_21_SAFE;
-                            count[i, j] = 20;
-                        }
-                        if (Pix[i, j].R == 40)
-                        {
-                            X[i, j] = WATER_22_SAFE;
-                            count[i, j] = 21;
-                        }
-                        if (Pix[i, j].R == 30)
-                        {
-                            X[i, j] = WATER_23_SAFE;
-                            count[i, j] = 22;
-                        }
-                        if (Pix[i, j].R == 20)
-                        {
-                            X[i, j] = WATER_24_SAFE;
-                            count[i, j] = 23;
-                        }
-                        if (Pix[i, j].R == 10)
-                        {
-                            X[i, j] = WATER_25_SAFE;
-                            count[i, j] = 24;
-                        }
-                        if (Pix[i, j].R == 0)
-                        {
-                            X[i, j] = WATER_26_SAFE;
-                            count[i, j] = 25;
-                        }
-                        if (Pix[i, j].R == 255)
-                        {
-                            X[i, j] = DOT_A;
-                            count[i, j] = 25;
-                        }
-                        if (Pix[i, j].R == 254)
-                        {
-                            X[i, j] = DOT_B;
-                            count[i, j] = 25;
-                        }
-                        if (Pix[i, j].G == 255)
-                        {
-                            X[i, j] = WAY;
-                            count[i, j] = 25;
-                        }
+
                     }
                 }
                 pictureBox2.Image = images;
@@ -631,137 +943,112 @@ namespace diplom_begin
             {
                 for (int iy = 0; iy < ny; iy++)
                 {
-                    if (X[ix, iy] == WATER_1_SAFE)
+                    switch (X[ix, iy])
                     {
-                        X1[ix, iy] = WATER_1_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_2_SAFE)
-                    {
-                        X1[ix, iy] = WATER_2_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_3_SAFE)
-                    {
-                        X1[ix, iy] = WATER_3_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_4_SAFE)
-                    {
-                        X1[ix, iy] = WATER_4_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_5_SAFE)
-                    {
-                        X1[ix, iy] = WATER_5_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_6_SAFE)
-                    {
-                        X1[ix, iy] = WATER_6_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_7_SAFE)
-                    {
-                        X1[ix, iy] = WATER_7_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_8_SAFE)
-                    {
-                        X1[ix, iy] = WATER_8_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_9_SAFE)
-                    {
-                        X1[ix, iy] = WATER_9_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_10_SAFE)
-                    {
-                        X1[ix, iy] = WATER_10_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_11_SAFE)
-                    {
-                        X1[ix, iy] = WATER_11_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_12_SAFE)
-                    {
-                        X1[ix, iy] = WATER_12_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_13_SAFE)
-                    {
-                        X1[ix, iy] = WATER_13_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_14_SAFE)
-                    {
-                        X1[ix, iy] = WATER_14_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_15_SAFE)
-                    {
-                        X1[ix, iy] = WATER_15_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_16_SAFE)
-                    {
-                        X1[ix, iy] = WATER_16_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_17_SAFE)
-                    {
-                        X1[ix, iy] = WATER_17_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_18_SAFE)
-                    {
-                        X1[ix, iy] = WATER_18_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_19_SAFE)
-                    {
-                        X1[ix, iy] = WATER_19_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_20_SAFE)
-                    {
-                        X1[ix, iy] = WATER_20_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_21_SAFE)
-                    {
-                        X1[ix, iy] = WATER_21_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_22_SAFE)
-                    {
-                        X1[ix, iy] = WATER_22_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_23_SAFE)
-                    {
-                        X1[ix, iy] = WATER_23_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_24_SAFE)
-                    {
-                        X1[ix, iy] = WATER_24_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_25_SAFE)
-                    {
-                        X1[ix, iy] = WATER_25_SAFE;
-                    }
-                    if (X[ix, iy] == WATER_26_SAFE)
-                    {
-                        X1[ix, iy] = WATER_26_SAFE;
-                    }
-                    if (X[ix, iy] == SAND)
-                    {
-                        X1[ix, iy] = SAND;
-                    }
-                    if (X[ix, iy] == ROAD)
-                    {
-                        X1[ix, iy] = ROAD;
-                    }
-                    if (X[ix, iy] == DIRT)
-                    {
-                        X1[ix, iy] = DIRT;
-                    }
-                    if (X[ix, iy] == TREE)
-                    {
-                        X1[ix, iy] = TREE;
-                    }
-                    if (X[ix, iy] == DOT_B)
-                    {
-                        X1[ix, iy] = DOT_B;
-                    }
-                    if (X[ix, iy] == WAY)
-                    {
-                        X1[ix, iy] = WAY;
-                    }
-                    if (X[ix, iy] == DOT_A)
-                    {
-                        X1[ix, iy] = DOT_A;
+                        // Водные объекты с безопасными погодными условиями
+                        case WATER_1_SAFE:
+                        case WATER_2_SAFE:
+                        case WATER_3_SAFE:
+                        case WATER_4_SAFE:
+                        case WATER_5_SAFE:
+                        case WATER_6_SAFE:
+                        case WATER_7_SAFE:
+                        case WATER_8_SAFE:
+                        case WATER_9_SAFE:
+                        case WATER_10_SAFE:
+                        case WATER_11_SAFE:
+                        case WATER_12_SAFE:
+                        case WATER_13_SAFE:
+                        case WATER_14_SAFE:
+                        case WATER_15_SAFE:
+                        case WATER_16_SAFE:
+                        case WATER_17_SAFE:
+                        case WATER_18_SAFE:
+                        case WATER_19_SAFE:
+                        case WATER_20_SAFE:
+                        case WATER_21_SAFE:
+                        case WATER_22_SAFE:
+                        case WATER_23_SAFE:
+                        case WATER_24_SAFE:
+                        case WATER_25_SAFE:
+                        case WATER_26_SAFE:
+                            X1[ix, iy] = X[ix, iy];
+                            break;
+
+                        // Водные объекты с погодными условиями средней опасности
+                        case WATER_1_NORMAL:
+                        case WATER_2_NORMAL:
+                        case WATER_3_NORMAL:
+                        case WATER_4_NORMAL:
+                        case WATER_5_NORMAL:
+                        case WATER_6_NORMAL:
+                        case WATER_7_NORMAL:
+                        case WATER_8_NORMAL:
+                        case WATER_9_NORMAL:
+                        case WATER_10_NORMAL:
+                        case WATER_11_NORMAL:
+                        case WATER_12_NORMAL:
+                        case WATER_13_NORMAL:
+                        case WATER_14_NORMAL:
+                        case WATER_15_NORMAL:
+                        case WATER_16_NORMAL:
+                        case WATER_17_NORMAL:
+                        case WATER_18_NORMAL:
+                        case WATER_19_NORMAL:
+                        case WATER_20_NORMAL:
+                        case WATER_21_NORMAL:
+                        case WATER_22_NORMAL:
+                        case WATER_23_NORMAL:
+                        case WATER_24_NORMAL:
+                        case WATER_25_NORMAL:
+                        case WATER_26_NORMAL:
+                            X1[ix, iy] = X[ix, iy];
+                            break;
+
+                        // Водные объекты с опасными погодными условиями
+                        case WATER_1_DANGER:
+                        case WATER_2_DANGER:
+                        case WATER_3_DANGER:
+                        case WATER_4_DANGER:
+                        case WATER_5_DANGER:
+                        case WATER_6_DANGER:
+                        case WATER_7_DANGER:
+                        case WATER_8_DANGER:
+                        case WATER_9_DANGER:
+                        case WATER_10_DANGER:
+                        case WATER_11_DANGER:
+                        case WATER_12_DANGER:
+                        case WATER_13_DANGER:
+                        case WATER_14_DANGER:
+                        case WATER_15_DANGER:
+                        case WATER_16_DANGER:
+                        case WATER_17_DANGER:
+                        case WATER_18_DANGER:
+                        case WATER_19_DANGER:
+                        case WATER_20_DANGER:
+                        case WATER_21_DANGER:
+                        case WATER_22_DANGER:
+                        case WATER_23_DANGER:
+                        case WATER_24_DANGER:
+                        case WATER_25_DANGER:
+                        case WATER_26_DANGER:
+                            X1[ix, iy] = X[ix, iy];
+                            break;
+
+                        // Другие объекты природы и пути
+                        case SAND:
+                        case ROAD:
+                        case DIRT:
+                        case TREE:
+                        case DOT_B:
+                        case WAY:
+                        case DOT_A:
+                            X1[ix, iy] = X[ix, iy];
+                            break;
+
+                        default:
+                            // Обработка случаев, если не совпадает ни с одним из перечисленных значений
+                            break;
                     }
 
                 }

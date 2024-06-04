@@ -54,6 +54,13 @@
             this.southeast = new System.Windows.Forms.Button();
             this.calm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.safeWind = new System.Windows.Forms.TextBox();
+            this.normalWind = new System.Windows.Forms.TextBox();
+            this.dangerWind = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +92,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1159, 411);
+            this.button2.Location = new System.Drawing.Point(1159, 511);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -142,7 +149,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1156, 342);
+            this.label3.Location = new System.Drawing.Point(1156, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 20;
@@ -151,7 +158,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Location = new System.Drawing.Point(1232, 339);
+            this.textBox2.Location = new System.Drawing.Point(1225, 207);
             this.textBox2.MaxLength = 3;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(89, 22);
@@ -163,7 +170,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1232, 342);
+            this.label6.Location = new System.Drawing.Point(1222, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 24;
@@ -183,11 +190,11 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1156, 375);
+            this.label4.Location = new System.Drawing.Point(1156, 244);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 16);
+            this.label4.Size = new System.Drawing.Size(111, 16);
             this.label4.TabIndex = 19;
-            this.label4.Text = "скорость ветра, м/с";
+            this.label4.Text = "Погодные зоны:";
             this.label4.Visible = false;
             // 
             // north
@@ -289,9 +296,69 @@
             this.label2.TabIndex = 40;
             this.label2.Text = "Направление ветра:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1156, 342);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(170, 16);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Зона средней опасности";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1156, 270);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 16);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Безопасная зона";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1156, 420);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 16);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Опасная зона";
+            // 
+            // safeWind
+            // 
+            this.safeWind.Location = new System.Drawing.Point(1159, 302);
+            this.safeWind.Name = "safeWind";
+            this.safeWind.Size = new System.Drawing.Size(100, 22);
+            this.safeWind.TabIndex = 44;
+            this.safeWind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.safeWind_KeyDown);
+            this.safeWind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.safeWind_KeyPress);
+            // 
+            // normalWind
+            // 
+            this.normalWind.Location = new System.Drawing.Point(1159, 372);
+            this.normalWind.Name = "normalWind";
+            this.normalWind.Size = new System.Drawing.Size(100, 22);
+            this.normalWind.TabIndex = 45;
+            this.normalWind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.normalWind_KeyDown);
+            this.normalWind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.normalWind_KeyPress);
+            // 
+            // dangerWind
+            // 
+            this.dangerWind.Location = new System.Drawing.Point(1159, 452);
+            this.dangerWind.Name = "dangerWind";
+            this.dangerWind.Size = new System.Drawing.Size(100, 22);
+            this.dangerWind.TabIndex = 46;
+            this.dangerWind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dangerWind_KeyDown);
+            this.dangerWind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dangerWind_KeyPress);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1384, 717);
+            this.Controls.Add(this.dangerWind);
+            this.Controls.Add(this.normalWind);
+            this.Controls.Add(this.safeWind);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.calm);
             this.Controls.Add(this.southeast);
@@ -352,6 +419,13 @@
         private System.Windows.Forms.Button southeast;
         private System.Windows.Forms.Button calm;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox safeWind;
+        private System.Windows.Forms.TextBox normalWind;
+        private System.Windows.Forms.TextBox dangerWind;
     }
 }
 
