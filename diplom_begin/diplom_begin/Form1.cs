@@ -114,12 +114,17 @@ namespace diplom_begin
 
         private int nx = 1, ny = 1, ia = 1, ja = 1, ib = 1, jb = 1;
         private int[,] X, count;
+        private int[,] zone; // 0 - нет зоны, 1 -  безопасная, 2 - нормальная, 3 - опасная
         private Node[,] grid;
         private double osad = 3;
         private bool isFirstClick = true;
         private double safe_wind = 1;
         private double normal_wind = 1;
         private double danger_wind = 1;
+        private double height = 1;
+        private double width = 1;
+        private double length = 1;
+        private double square = 1;
 
         public class Node
         {
@@ -359,180 +364,118 @@ namespace diplom_begin
             InitializeComponent();
         }
 
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e, TextBox textBox)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                int value;
+                if (Int32.TryParse(textBox.Text + e.KeyChar, out value)) // пытаемся преобразовать текст в число
+                {
+                    if (value < 0 || value > 24) // проверяем значений
+                    {
+                        if (e.KeyChar != '\b') // \b - backspace
+                        {
+                            e.Handled = true; // отменяем ввод символа
+                        }
+                    }
+                }
+                else
+                {
+                    if (e.KeyChar != '\b') // \b - backspace
+                    {
+                        e.Handled = true; // отменяем ввод символа
+                    }
+                }
+            }
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e, TextBox textBox, ref double windValue, Label label, Button button)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string perem = textBox.Text;
+                windValue = double.Parse(perem);
+                label.Text = perem;
+                label.Visible = true;
+                textBox.Visible = false;
+                button.Visible = true;
+            }
+        }
+
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                int value;
-                if (Int32.TryParse(textBox2.Text + e.KeyChar, out
-                value)) // пытаемся преобразовать текст в число
-                {
-                    if (value < 0 || value > 24) // проверяем значений
-                    {
-                        if (e.KeyChar != '\b') // \b - backspace
-                        {
-                            e.Handled = true; // отменяем ввод символа
-                        }
-                    }
-                }
-                else
-                {
-                    if (e.KeyChar != '\b') // \b - backspace
-                    {
-                        e.Handled = true; // отменяем ввод символа
-                    }
-                }
-            }
+            TextBox_KeyPress(sender, e, input_osad);
         }
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
-        // завершение редактирования поля ввода осадки
+        private void textBox2_KeyDown(object sender, KeyEventArgs e) // завершение редактирования поля ввода осадки
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string perem = textBox2.Text;
-                osad = (double)(double.Parse(perem));
-                label6.Text = perem;
-                label6.Visible = true;
-                textBox2.Visible = false;
-                button2.Visible = true;
-            }
+            TextBox_KeyDown(sender, e, input_osad, ref osad, label_osad, button2);
         }
 
-        private void safeWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        private void safeWind_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                int value;
-                if (Int32.TryParse(safeWind.Text + e.KeyChar, out
-                value)) // пытаемся преобразовать текст в число
-                {
-                    if (value < 0 || value > 24) // проверяем значений
-                    {
-                        if (e.KeyChar != '\b') // \b - backspace
-                        {
-                            e.Handled = true; // отменяем ввод символа
-                        }
-                    }
-                }
-                else
-                {
-                    if (e.KeyChar != '\b') // \b - backspace
-                    {
-                        e.Handled = true; // отменяем ввод символа
-                    }
-                }
-            }
+            TextBox_KeyPress(sender, e, safeWind);
         }
+
         private void safeWind_KeyDown(object sender, KeyEventArgs e)
-        // завершение редактирования поля ввода осадки
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string perem = safeWind.Text;
-                safe_wind = (double)(double.Parse(perem));
-                label6.Text = perem;
-                label6.Visible = true;
-                safeWind.Visible = false;
-                button2.Visible = true;
-            }
+            TextBox_KeyDown(sender, e, safeWind, ref safe_wind, label_safe, button2);
         }
 
-        private void normalWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        private void normalWind_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                int value;
-                if (Int32.TryParse(normalWind.Text + e.KeyChar, out
-                value)) // пытаемся преобразовать текст в число
-                {
-                    if (value < 0 || value > 24) // проверяем значений
-                    {
-                        if (e.KeyChar != '\b') // \b - backspace
-                        {
-                            e.Handled = true; // отменяем ввод символа
-                        }
-                    }
-                }
-                else
-                {
-                    if (e.KeyChar != '\b') // \b - backspace
-                    {
-                        e.Handled = true; // отменяем ввод символа
-                    }
-                }
-            }
+            TextBox_KeyPress(sender, e, normalWind);
         }
+
         private void normalWind_KeyDown(object sender, KeyEventArgs e)
-        // завершение редактирования поля ввода осадки
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string perem = normalWind.Text;
-                normal_wind = (double)(double.Parse(perem));
-                label6.Text = perem;
-                label6.Visible = true;
-                normalWind.Visible = false;
-                button2.Visible = true;
-            }
+            TextBox_KeyDown(sender, e, normalWind, ref normal_wind, label_normal, button2);
         }
 
-        private void dangerWind_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
+        private void dangerWind_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b') // \b backspace
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                int value;
-                if (Int32.TryParse(dangerWind.Text + e.KeyChar, out
-                value)) // пытаемся преобразовать текст в число
-                {
-                    if (value < 0 || value > 24) // проверяем значений
-                    {
-                        if (e.KeyChar != '\b') // \b - backspace
-                        {
-                            e.Handled = true; // отменяем ввод символа
-                        }
-                    }
-                }
-                else
-                {
-                    if (e.KeyChar != '\b') // \b - backspace
-                    {
-                        e.Handled = true; // отменяем ввод символа
-                    }
-                }
-            }
+            TextBox_KeyPress(sender, e, dangerWind);
         }
+
         private void dangerWind_KeyDown(object sender, KeyEventArgs e)
-        // завершение редактирования поля ввода осадки
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string perem = dangerWind.Text;
-                danger_wind = (double)(double.Parse(perem));
-                label6.Text = perem;
-                label6.Visible = true;
-                dangerWind.Visible = false;
-                button2.Visible = true;
-            }
+            TextBox_KeyDown(sender, e, dangerWind, ref danger_wind, label_danger, button2);
         }
 
-        private void pictureBox2_MouseDown(object sender,
-        MouseEventArgs e) // установка точек начала и конца 
+        private void length_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, input_length);
+        }
+
+        private void length_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, input_length, ref length, label_length, button2);
+        }
+
+        private void width_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, input_width);
+        }
+
+        private void width_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, input_width, ref width, label_width, button2);
+        }
+
+        private void height_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, input_height);
+        }
+
+        private void height_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, input_height, ref height, label_height, button2);
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e) // установка точек начала и конца 
         {
             Bitmap bmp = (Bitmap)pictureBox2.Image;
             double scaleX = (double)((double)pictureBox2.Width / (double)pictureBox2.Image.Width);
@@ -556,8 +499,7 @@ namespace diplom_begin
             }
             pictureBox2.Image = bmp;
         }
-        private void button12_Click(object sender, EventArgs e)
-        // нажатие кнопки открыть
+        private void button12_Click(object sender, EventArgs e) // нажатие кнопки открыть
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)| *.jpg; *.jpeg; *.png; *.gif | All files (*.*) | *.* ";
@@ -572,6 +514,7 @@ namespace diplom_begin
                 ny = images.Height;
                 bool isWall;
                 count = new int[nx, ny];
+                zone = new int[nx, ny];
                 for (var i = 0; i < nx; i++)
                 {
                     for (var j = 0; j < ny; j++)
@@ -582,122 +525,152 @@ namespace diplom_begin
                             case 185:
                                 X[i, j] = DIRT;
                                 count[i, j] = 0;
+                                zone[i, j] = 0;
                                 break;
                             case 181: 
                                 X[i, j] = TREE;
                                 count[i, j] = 0;
+                                zone[i, j] = 0;
                                 break;
                             case 197: 
                                 X[i, j] = SAND;
                                 count[i, j] = 0;
+                                zone[i, j] = 0;
                                 break;
                             case 195: 
                                 X[i, j] = ROAD;
                                 count[i, j] = 0;
+                                zone[i, j] = 0;
                                 break;
                             case 250: 
                                 X[i, j] = WATER_1_SAFE;
                                 count[i, j] = 0;
+                                zone[i, j] = 1;
                                 break;
                             case 240: 
                                 X[i, j] = WATER_2_SAFE;
                                 count[i, j] = 1;
+                                zone[i, j] = 1;
                                 break;
                             case 230:
                                 X[i, j] = WATER_3_SAFE;
                                 count[i, j] = 2;
+                                zone[i, j] = 1;
                                 break;
                             case 220:
                                 X[i, j] = WATER_4_SAFE;
                                 count[i, j] = 3;
+                                zone[i, j] = 1;
                                 break;
                             case 210:
                                 X[i, j] = WATER_5_SAFE;
                                 count[i, j] = 4;
+                                zone[i, j] = 1;
                                 break;
                             case 200:
                                 X[i, j] = WATER_6_SAFE;
                                 count[i, j] = 5;
+                                zone[i, j] = 1;
                                 break;
                             case 190:
                                 X[i, j] = WATER_7_SAFE;
                                 count[i, j] = 6;
+                                zone[i, j] = 1;
                                 break;
                             case 180:
                                 X[i, j] = WATER_8_SAFE;
                                 count[i, j] = 7;
+                                zone[i, j] = 1;
                                 break;
                             case 170:
                                 X[i, j] = WATER_9_SAFE;
                                 count[i, j] = 8;
+                                zone[i, j] = 1;
                                 break;
                             case 160:
                                 X[i, j] = WATER_10_SAFE;
                                 count[i, j] = 9;
+                                zone[i, j] = 1;
                                 break;
                             case 150:
                                 X[i, j] = WATER_11_SAFE;
                                 count[i, j] = 10;
+                                zone[i, j] = 1;
                                 break;
                             case 140:
                                 X[i, j] = WATER_12_SAFE;
                                 count[i, j] = 11;
+                                zone[i, j] = 1;
                                 break;
                             case 130:
                                 X[i, j] = WATER_13_SAFE;
                                 count[i, j] = 12;
+                                zone[i, j] = 1;
                                 break;
                             case 120:
                                 X[i, j] = WATER_14_SAFE;
                                 count[i, j] = 13;
+                                zone[i, j] = 1;
                                 break;
                             case 110:
                                 X[i, j] = WATER_15_SAFE;
                                 count[i, j] = 14;
+                                zone[i, j] = 1;
                                 break;
                             case 100:
                                 X[i, j] = WATER_16_SAFE;
                                 count[i, j] = 15;
+                                zone[i, j] = 1;
                                 break;
                             case 90:
                                 X[i, j] = WATER_17_SAFE;
                                 count[i, j] = 16;
+                                zone[i, j] = 1;
                                 break;
                             case 80:
                                 X[i, j] = WATER_18_SAFE;
                                 count[i, j] = 17;
+                                zone[i, j] = 1;
                                 break;
                             case 70:
                                 X[i, j] = WATER_19_SAFE;
                                 count[i, j] = 18;
+                                zone[i, j] = 1;
                                 break;
                             case 60:
                                 X[i, j] = WATER_20_SAFE;
                                 count[i, j] = 19;
+                                zone[i, j] = 1;
                                 break;
                             case 50:
                                 X[i, j] = WATER_21_SAFE;
                                 count[i, j] = 20;
+                                zone[i, j] = 1;
                                 break;
                             case 40:
                                 X[i, j] = WATER_22_SAFE;
                                 count[i, j] = 21;
+                                zone[i, j] = 1;
                                 break;
                             case 30:
                                 X[i, j] = WATER_23_SAFE;
                                 count[i, j] = 22;
+                                zone[i, j] = 1;
                                 break;
                             case 20:
                                 X[i, j] = WATER_24_SAFE;
                                 count[i, j] = 23;
+                                zone[i, j] = 1;
                                 break;
                             case 10:
                                 X[i, j] = WATER_25_SAFE;
                                 count[i, j] = 24;
+                                zone[i, j] = 1;
                                 break;
                             case 0:
                                 X[i, j] = WATER_26_SAFE;
                                 count[i, j] = 25;
+                                zone[i, j] = 1;
                                 break;
                             case 2:
                                 X[i, j] = DOT_A;
@@ -714,210 +687,262 @@ namespace diplom_begin
                             case 226:
                                 X[i, j] = WATER_1_NORMAL;
                                 count[i, j] = 0;
+                                zone[i, j] = 2;
                                 break;
                             case 225:
                                 X[i, j] = WATER_2_NORMAL;
                                 count[i, j] = 1;
+                                zone[i, j] = 2;
                                 break;
                             case 224:
                                 X[i, j] = WATER_3_NORMAL;
                                 count[i, j] = 2;
+                                zone[i, j] = 2;
                                 break;
                             case 223:
                                 X[i, j] = WATER_4_NORMAL;
                                 count[i, j] = 3;
+                                zone[i, j] = 2;
                                 break;
                             case 222:
                                 X[i, j] = WATER_5_NORMAL;
                                 count[i, j] = 4;
+                                zone[i, j] = 2;
                                 break;
                             case 221:
                                 X[i, j] = WATER_6_NORMAL;
                                 count[i, j] = 5;
+                                zone[i, j] = 2;
                                 break;
                             case 219:
                                 X[i, j] = WATER_7_NORMAL;
                                 count[i, j] = 6;
+                                zone[i, j] = 2;
                                 break;
                             case 218:
                                 X[i, j] = WATER_8_NORMAL;
                                 count[i, j] = 7;
+                                zone[i, j] = 2;
                                 break;
                             case 217:
                                 X[i, j] = WATER_9_NORMAL;
                                 count[i, j] = 8;
+                                zone[i, j] = 2;
                                 break;
                             case 216:
                                 X[i, j] = WATER_10_NORMAL;
                                 count[i, j] = 9;
+                                zone[i, j] = 2;
                                 break;
                             case 215:
                                 X[i, j] = WATER_11_NORMAL;
                                 count[i, j] = 10;
+                                zone[i, j] = 2;
                                 break;
                             case 214:
                                 X[i, j] = WATER_12_NORMAL;
                                 count[i, j] = 11;
+                                zone[i, j] = 2;
                                 break;
                             case 213:
                                 X[i, j] = WATER_13_NORMAL;
                                 count[i, j] = 12;
+                                zone[i, j] = 2;
                                 break;
                             case 212:
                                 X[i, j] = WATER_14_NORMAL;
                                 count[i, j] = 13;
+                                zone[i, j] = 2;
                                 break;
                             case 211:
                                 X[i, j] = WATER_15_NORMAL;
                                 count[i, j] = 14;
+                                zone[i, j] = 2;
                                 break;
                             case 209:
                                 X[i, j] = WATER_16_NORMAL;
                                 count[i, j] = 15;
+                                zone[i, j] = 2;
                                 break;
                             case 208:
                                 X[i, j] = WATER_17_NORMAL;
                                 count[i, j] = 16;
+                                zone[i, j] = 2;
                                 break;
                             case 207:
                                 X[i, j] = WATER_18_NORMAL;
                                 count[i, j] = 17;
+                                zone[i, j] = 2;
                                 break;
                             case 206:
                                 X[i, j] = WATER_19_NORMAL;
                                 count[i, j] = 18;
+                                zone[i, j] = 2;
                                 break;
                             case 205:
                                 X[i, j] = WATER_20_NORMAL;
                                 count[i, j] = 19;
+                                zone[i, j] = 2;
                                 break;
                             case 204:
                                 X[i, j] = WATER_21_NORMAL;
                                 count[i, j] = 20;
+                                zone[i, j] = 2;
                                 break;
                             case 203:
                                 X[i, j] = WATER_22_NORMAL;
                                 count[i, j] = 21;
+                                zone[i, j] = 2;
                                 break;
                             case 202:
                                 X[i, j] = WATER_23_NORMAL;
                                 count[i, j] = 22;
+                                zone[i, j] = 2;
                                 break;
                             case 201:
                                 X[i, j] = WATER_24_NORMAL;
                                 count[i, j] = 23;
+                                zone[i, j] = 2;
                                 break;
                             case 199:
                                 X[i, j] = WATER_25_NORMAL;
                                 count[i, j] = 24;
+                                zone[i, j] = 2;
                                 break;
                             case 198:
                                 X[i, j] = WATER_26_NORMAL;
                                 count[i, j] = 25;
+                                zone[i, j] = 2;
                                 break;
                             case 255:
                                 X[i, j] = WATER_1_DANGER;
                                 count[i, j] = 0;
+                                zone[i, j] = 3;
                                 break;
                             case 254:
                                 X[i, j] = WATER_2_DANGER;
                                 count[i, j] = 1;
+                                zone[i, j] = 3;
                                 break;
                             case 253:
                                 X[i, j] = WATER_3_DANGER;
                                 count[i, j] = 2;
+                                zone[i, j] = 3;
                                 break;
                             case 252:
                                 X[i, j] = WATER_4_DANGER;
                                 count[i, j] = 3;
+                                zone[i, j] = 3;
                                 break;
                             case 251:
                                 X[i, j] = WATER_5_DANGER;
                                 count[i, j] = 4;
+                                zone[i, j] = 3;
                                 break;
                             case 249:
                                 X[i, j] = WATER_6_DANGER;
                                 count[i, j] = 5;
+                                zone[i, j] = 3;
                                 break;
                             case 248:
                                 X[i, j] = WATER_7_DANGER;
                                 count[i, j] = 6;
+                                zone[i, j] = 3;
                                 break;
                             case 247:
                                 X[i, j] = WATER_8_DANGER;
                                 count[i, j] = 7;
+                                zone[i, j] = 3;
                                 break;
                             case 246:
                                 X[i, j] = WATER_9_DANGER;
                                 count[i, j] = 8;
+                                zone[i, j] = 3;
                                 break;
                             case 245:
                                 X[i, j] = WATER_10_DANGER;
                                 count[i, j] = 9;
+                                zone[i, j] = 3;
                                 break;
                             case 244:
                                 X[i, j] = WATER_11_DANGER;
                                 count[i, j] = 10;
+                                zone[i, j] = 3;
                                 break;
                             case 243:
                                 X[i, j] = WATER_12_DANGER;
                                 count[i, j] = 11;
+                                zone[i, j] = 3;
                                 break;
                             case 242:
                                 X[i, j] = WATER_13_DANGER;
                                 count[i, j] = 12;
+                                zone[i, j] = 3;
                                 break;
                             case 241:
                                 X[i, j] = WATER_14_DANGER;
                                 count[i, j] = 13;
+                                zone[i, j] = 3;
                                 break;
                             case 239:
                                 X[i, j] = WATER_15_DANGER;
                                 count[i, j] = 14;
+                                zone[i, j] = 3;
                                 break;
                             case 238:
                                 X[i, j] = WATER_16_DANGER;
                                 count[i, j] = 15;
+                                zone[i, j] = 3;
                                 break;
                             case 237:
                                 X[i, j] = WATER_17_DANGER;
                                 count[i, j] = 16;
+                                zone[i, j] = 3;
                                 break;
                             case 236:
                                 X[i, j] = WATER_18_DANGER;
                                 count[i, j] = 17;
+                                zone[i, j] = 3;
                                 break;
                             case 235:
                                 X[i, j] = WATER_19_DANGER;
                                 count[i, j] = 18;
+                                zone[i, j] = 3;
                                 break;
                             case 234:
                                 X[i, j] = WATER_20_DANGER;
                                 count[i, j] = 19;
+                                zone[i, j] = 3;
                                 break;
                             case 233:
                                 X[i, j] = WATER_21_DANGER;
                                 count[i, j] = 20;
+                                zone[i, j] = 3;
                                 break;
                             case 232:
                                 X[i, j] = WATER_22_DANGER;
                                 count[i, j] = 21;
+                                zone[i, j] = 3;
                                 break;
                             case 231:
                                 X[i, j] = WATER_23_DANGER;
                                 count[i, j] = 22;
+                                zone[i, j] = 3;
                                 break;
                             case 229:
                                 X[i, j] = WATER_24_DANGER;
                                 count[i, j] = 23;
+                                zone[i, j] = 3;
                                 break;
                             case 228:
                                 X[i, j] = WATER_25_DANGER;
                                 count[i, j] = 24;
+                                zone[i, j] = 3;
                                 break;
                             case 227:
                                 X[i, j] = WATER_26_DANGER;
                                 count[i, j] = 25;
+                                zone[i, j] = 3;
                                 break;
                             default:
                                 break;
@@ -927,9 +952,15 @@ namespace diplom_begin
                 }
                 pictureBox2.Image = images;
                 button2.Visible = false;
-                label6.Visible = false;
-                textBox2.Visible = true;
-                textBox2.Text = string.Empty;
+                label_osad.Visible = false;
+                label_safe.Visible = false;
+                label_normal.Visible = false;
+                label_danger.Visible = false;   
+                label_height.Visible = false;
+                label_width.Visible = false;
+                label_length.Visible = false;
+                input_osad.Visible = true;
+                input_osad.Text = string.Empty;
                 label4.Visible = false;
                 label4.Text = string.Empty;
             }
@@ -1053,6 +1084,7 @@ namespace diplom_begin
 
                 }
             }
+            double speed;
             for (int ix = 0; ix < nx; ix++)
             {
                 for (int iy = 0; iy < ny; iy++)
@@ -1064,8 +1096,23 @@ namespace diplom_begin
                     else
                     {
                         isWall = false;
-                        //price = f_base * (1 + Square * Speed * coefSpeed + HeightWave * coefWave * Periodicity);
+                        switch (zone[ix, iy])
+                        {
+                            case 1:
+                                speed = safe_wind;
+                                break;
+                            case 2:
+                                speed = normal_wind;
+                                break;
+                            case 3:
+                                speed = danger_wind;
+                                break;
+                            default:
+                                speed = 0;
+                                break;
+                        }
                     }
+                    //price = f_base * (1 + square * speed * 0.0005); //+ heightWave * coefWave * periodicity);
                     grid[ix, iy] = new Node(ix, iy, isWall);
                 }
             }
