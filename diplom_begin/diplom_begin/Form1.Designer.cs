@@ -61,9 +61,9 @@
             this.safeWind = new System.Windows.Forms.TextBox();
             this.normalWind = new System.Windows.Forms.TextBox();
             this.dangerWind = new System.Windows.Forms.TextBox();
-            this.label_safe = new System.Windows.Forms.Label();
-            this.label_normal = new System.Windows.Forms.Label();
-            this.label_danger = new System.Windows.Forms.Label();
+            this.labelSafe = new System.Windows.Forms.Label();
+            this.labelNormal = new System.Windows.Forms.Label();
+            this.labelDanger = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.input_length = new System.Windows.Forms.TextBox();
@@ -72,9 +72,27 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label_length = new System.Windows.Forms.Label();
-            this.label_width = new System.Windows.Forms.Label();
-            this.label_height = new System.Windows.Forms.Label();
+            this.labelLength = new System.Windows.Forms.Label();
+            this.labelWidth = new System.Windows.Forms.Label();
+            this.labelHeight = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.periodicity_safe_input = new System.Windows.Forms.TextBox();
+            this.periodicity_normal_input = new System.Windows.Forms.TextBox();
+            this.periodicity_danger_input = new System.Windows.Forms.TextBox();
+            this.wave_safe_input = new System.Windows.Forms.TextBox();
+            this.wave_normal_input = new System.Windows.Forms.TextBox();
+            this.wave_danger_input = new System.Windows.Forms.TextBox();
+            this.label_periodicity_safe = new System.Windows.Forms.Label();
+            this.label_periodicity_normal = new System.Windows.Forms.Label();
+            this.label_periodicity_danger = new System.Windows.Forms.Label();
+            this.label_wave_safe = new System.Windows.Forms.Label();
+            this.label_wave_normal = new System.Windows.Forms.Label();
+            this.label_wave_dander = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,9 +101,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(43, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(28, 30);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1089, 675);
+            this.pictureBox2.Size = new System.Drawing.Size(1103, 808);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -104,9 +122,8 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1159, 682);
+            this.button2.Location = new System.Drawing.Point(1159, 815);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -161,9 +178,8 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1156, 195);
+            this.label3.Location = new System.Drawing.Point(1156, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 20;
@@ -171,8 +187,7 @@
             // 
             // input_osad
             // 
-            this.input_osad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.input_osad.Location = new System.Drawing.Point(1236, 192);
+            this.input_osad.Location = new System.Drawing.Point(1236, 190);
             this.input_osad.MaxLength = 3;
             this.input_osad.Name = "input_osad";
             this.input_osad.Size = new System.Drawing.Size(100, 22);
@@ -182,9 +197,8 @@
             // 
             // label_osad
             // 
-            this.label_osad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_osad.AutoSize = true;
-            this.label_osad.Location = new System.Drawing.Point(1233, 195);
+            this.label_osad.Location = new System.Drawing.Point(1233, 193);
             this.label_osad.Name = "label_osad";
             this.label_osad.Size = new System.Drawing.Size(75, 16);
             this.label_osad.TabIndex = 24;
@@ -193,18 +207,19 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 139);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1418, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1156, 413);
+            this.label4.Location = new System.Drawing.Point(1156, 405);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 16);
             this.label4.TabIndex = 19;
@@ -213,7 +228,7 @@
             // 
             // north
             // 
-            this.north.Location = new System.Drawing.Point(1225, 52);
+            this.north.Location = new System.Drawing.Point(1225, 50);
             this.north.Name = "north";
             this.north.Size = new System.Drawing.Size(60, 30);
             this.north.TabIndex = 31;
@@ -223,7 +238,7 @@
             // 
             // south
             // 
-            this.south.Location = new System.Drawing.Point(1225, 124);
+            this.south.Location = new System.Drawing.Point(1225, 122);
             this.south.Name = "south";
             this.south.Size = new System.Drawing.Size(60, 30);
             this.south.TabIndex = 32;
@@ -233,7 +248,7 @@
             // 
             // east
             // 
-            this.east.Location = new System.Drawing.Point(1291, 88);
+            this.east.Location = new System.Drawing.Point(1291, 86);
             this.east.Name = "east";
             this.east.Size = new System.Drawing.Size(60, 30);
             this.east.TabIndex = 33;
@@ -243,7 +258,7 @@
             // 
             // west
             // 
-            this.west.Location = new System.Drawing.Point(1159, 88);
+            this.west.Location = new System.Drawing.Point(1159, 86);
             this.west.Name = "west";
             this.west.Size = new System.Drawing.Size(60, 30);
             this.west.TabIndex = 34;
@@ -253,7 +268,7 @@
             // 
             // northeast
             // 
-            this.northeast.Location = new System.Drawing.Point(1291, 52);
+            this.northeast.Location = new System.Drawing.Point(1291, 50);
             this.northeast.Name = "northeast";
             this.northeast.Size = new System.Drawing.Size(60, 30);
             this.northeast.TabIndex = 35;
@@ -263,7 +278,7 @@
             // 
             // northwest
             // 
-            this.northwest.Location = new System.Drawing.Point(1159, 52);
+            this.northwest.Location = new System.Drawing.Point(1159, 50);
             this.northwest.Name = "northwest";
             this.northwest.Size = new System.Drawing.Size(60, 30);
             this.northwest.TabIndex = 36;
@@ -273,7 +288,7 @@
             // 
             // southwest
             // 
-            this.southwest.Location = new System.Drawing.Point(1159, 124);
+            this.southwest.Location = new System.Drawing.Point(1159, 122);
             this.southwest.Name = "southwest";
             this.southwest.Size = new System.Drawing.Size(60, 30);
             this.southwest.TabIndex = 37;
@@ -283,7 +298,7 @@
             // 
             // southeast
             // 
-            this.southeast.Location = new System.Drawing.Point(1291, 124);
+            this.southeast.Location = new System.Drawing.Point(1291, 122);
             this.southeast.Name = "southeast";
             this.southeast.Size = new System.Drawing.Size(60, 30);
             this.southeast.TabIndex = 38;
@@ -293,7 +308,7 @@
             // 
             // calm
             // 
-            this.calm.Location = new System.Drawing.Point(1225, 88);
+            this.calm.Location = new System.Drawing.Point(1225, 86);
             this.calm.Name = "calm";
             this.calm.Size = new System.Drawing.Size(60, 30);
             this.calm.TabIndex = 39;
@@ -304,7 +319,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1156, 30);
+            this.label2.Location = new System.Drawing.Point(1156, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 16);
             this.label2.TabIndex = 40;
@@ -313,7 +328,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1156, 511);
+            this.label5.Location = new System.Drawing.Point(1156, 473);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 16);
             this.label5.TabIndex = 41;
@@ -322,7 +337,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1156, 439);
+            this.label7.Location = new System.Drawing.Point(1156, 437);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 16);
             this.label7.TabIndex = 42;
@@ -331,7 +346,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1156, 589);
+            this.label8.Location = new System.Drawing.Point(1156, 507);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 16);
             this.label8.TabIndex = 43;
@@ -339,7 +354,7 @@
             // 
             // safeWind
             // 
-            this.safeWind.Location = new System.Drawing.Point(1159, 471);
+            this.safeWind.Location = new System.Drawing.Point(1332, 434);
             this.safeWind.Name = "safeWind";
             this.safeWind.Size = new System.Drawing.Size(100, 22);
             this.safeWind.TabIndex = 44;
@@ -348,7 +363,7 @@
             // 
             // normalWind
             // 
-            this.normalWind.Location = new System.Drawing.Point(1159, 541);
+            this.normalWind.Location = new System.Drawing.Point(1332, 470);
             this.normalWind.Name = "normalWind";
             this.normalWind.Size = new System.Drawing.Size(100, 22);
             this.normalWind.TabIndex = 45;
@@ -357,47 +372,47 @@
             // 
             // dangerWind
             // 
-            this.dangerWind.Location = new System.Drawing.Point(1159, 621);
+            this.dangerWind.Location = new System.Drawing.Point(1332, 507);
             this.dangerWind.Name = "dangerWind";
             this.dangerWind.Size = new System.Drawing.Size(100, 22);
             this.dangerWind.TabIndex = 46;
             this.dangerWind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dangerWind_KeyDown);
             this.dangerWind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dangerWind_KeyPress);
             // 
-            // label_safe
+            // labelSafe
             // 
-            this.label_safe.AutoSize = true;
-            this.label_safe.Location = new System.Drawing.Point(1159, 474);
-            this.label_safe.Name = "label_safe";
-            this.label_safe.Size = new System.Drawing.Size(70, 16);
-            this.label_safe.TabIndex = 47;
-            this.label_safe.Text = "label_safe";
-            this.label_safe.Visible = false;
+            this.labelSafe.AutoSize = true;
+            this.labelSafe.Location = new System.Drawing.Point(1329, 437);
+            this.labelSafe.Name = "labelSafe";
+            this.labelSafe.Size = new System.Drawing.Size(70, 16);
+            this.labelSafe.TabIndex = 47;
+            this.labelSafe.Text = "label_safe";
+            this.labelSafe.Visible = false;
             // 
-            // label_normal
+            // labelNormal
             // 
-            this.label_normal.AutoSize = true;
-            this.label_normal.Location = new System.Drawing.Point(1159, 544);
-            this.label_normal.Name = "label_normal";
-            this.label_normal.Size = new System.Drawing.Size(85, 16);
-            this.label_normal.TabIndex = 48;
-            this.label_normal.Text = "label_normal";
-            this.label_normal.Visible = false;
+            this.labelNormal.AutoSize = true;
+            this.labelNormal.Location = new System.Drawing.Point(1332, 473);
+            this.labelNormal.Name = "labelNormal";
+            this.labelNormal.Size = new System.Drawing.Size(85, 16);
+            this.labelNormal.TabIndex = 48;
+            this.labelNormal.Text = "label_normal";
+            this.labelNormal.Visible = false;
             // 
-            // label_danger
+            // labelDanger
             // 
-            this.label_danger.AutoSize = true;
-            this.label_danger.Location = new System.Drawing.Point(1159, 626);
-            this.label_danger.Name = "label_danger";
-            this.label_danger.Size = new System.Drawing.Size(87, 16);
-            this.label_danger.TabIndex = 49;
-            this.label_danger.Text = "label_danger";
-            this.label_danger.Visible = false;
+            this.labelDanger.AutoSize = true;
+            this.labelDanger.Location = new System.Drawing.Point(1332, 512);
+            this.labelDanger.Name = "labelDanger";
+            this.labelDanger.Size = new System.Drawing.Size(87, 16);
+            this.labelDanger.TabIndex = 49;
+            this.labelDanger.Text = "label_danger";
+            this.labelDanger.Visible = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1156, 167);
+            this.label12.Location = new System.Drawing.Point(1156, 165);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(242, 16);
             this.label12.TabIndex = 50;
@@ -405,7 +420,7 @@
             // 
             // input_length
             // 
-            this.input_length.Location = new System.Drawing.Point(1236, 223);
+            this.input_length.Location = new System.Drawing.Point(1236, 221);
             this.input_length.Name = "input_length";
             this.input_length.Size = new System.Drawing.Size(100, 22);
             this.input_length.TabIndex = 51;
@@ -414,7 +429,7 @@
             // 
             // input_width
             // 
-            this.input_width.Location = new System.Drawing.Point(1236, 254);
+            this.input_width.Location = new System.Drawing.Point(1236, 252);
             this.input_width.Name = "input_width";
             this.input_width.Size = new System.Drawing.Size(100, 22);
             this.input_width.TabIndex = 52;
@@ -423,7 +438,7 @@
             // 
             // input_height
             // 
-            this.input_height.Location = new System.Drawing.Point(1236, 290);
+            this.input_height.Location = new System.Drawing.Point(1236, 288);
             this.input_height.Name = "input_height";
             this.input_height.Size = new System.Drawing.Size(100, 22);
             this.input_height.TabIndex = 53;
@@ -433,7 +448,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1156, 226);
+            this.label13.Location = new System.Drawing.Point(1156, 223);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 54;
@@ -442,7 +457,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1156, 257);
+            this.label14.Location = new System.Drawing.Point(1156, 255);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 16);
             this.label14.TabIndex = 55;
@@ -451,48 +466,234 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1156, 293);
+            this.label15.Location = new System.Drawing.Point(1156, 291);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 16);
             this.label15.TabIndex = 56;
             this.label15.Text = "Высота, м";
             // 
-            // label_length
+            // labelLength
             // 
-            this.label_length.AutoSize = true;
-            this.label_length.Location = new System.Drawing.Point(1236, 226);
-            this.label_length.Name = "label_length";
-            this.label_length.Size = new System.Drawing.Size(80, 16);
-            this.label_length.TabIndex = 57;
-            this.label_length.Text = "label_length";
-            this.label_length.Visible = false;
+            this.labelLength.AutoSize = true;
+            this.labelLength.Location = new System.Drawing.Point(1236, 224);
+            this.labelLength.Name = "labelLength";
+            this.labelLength.Size = new System.Drawing.Size(80, 16);
+            this.labelLength.TabIndex = 57;
+            this.labelLength.Text = "label_length";
+            this.labelLength.Visible = false;
             // 
-            // label_width
+            // labelWidth
             // 
-            this.label_width.AutoSize = true;
-            this.label_width.Location = new System.Drawing.Point(1236, 257);
-            this.label_width.Name = "label_width";
-            this.label_width.Size = new System.Drawing.Size(74, 16);
-            this.label_width.TabIndex = 58;
-            this.label_width.Text = "label_width";
-            this.label_width.Visible = false;
+            this.labelWidth.AutoSize = true;
+            this.labelWidth.Location = new System.Drawing.Point(1236, 255);
+            this.labelWidth.Name = "labelWidth";
+            this.labelWidth.Size = new System.Drawing.Size(74, 16);
+            this.labelWidth.TabIndex = 58;
+            this.labelWidth.Text = "label_width";
+            this.labelWidth.Visible = false;
             // 
-            // label_height
+            // labelHeight
             // 
-            this.label_height.AutoSize = true;
-            this.label_height.Location = new System.Drawing.Point(1236, 293);
-            this.label_height.Name = "label_height";
-            this.label_height.Size = new System.Drawing.Size(80, 16);
-            this.label_height.TabIndex = 59;
-            this.label_height.Text = "label_height";
-            this.label_height.Visible = false;
+            this.labelHeight.AutoSize = true;
+            this.labelHeight.Location = new System.Drawing.Point(1236, 291);
+            this.labelHeight.Name = "labelHeight";
+            this.labelHeight.Size = new System.Drawing.Size(80, 16);
+            this.labelHeight.TabIndex = 59;
+            this.labelHeight.Text = "label_height";
+            this.labelHeight.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1156, 573);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 16);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "Безопасная частота";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1156, 606);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 16);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "Нормальная частота";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1156, 640);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 16);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Опасная частота";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1156, 672);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 16);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "Безопасная волна";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1156, 700);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(131, 16);
+            this.label16.TabIndex = 64;
+            this.label16.Text = "Нормальная волна";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1156, 732);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 16);
+            this.label17.TabIndex = 65;
+            this.label17.Text = "Опасная волна";
+            // 
+            // periodicity_safe_input
+            // 
+            this.periodicity_safe_input.Location = new System.Drawing.Point(1332, 570);
+            this.periodicity_safe_input.Name = "periodicity_safe_input";
+            this.periodicity_safe_input.Size = new System.Drawing.Size(100, 22);
+            this.periodicity_safe_input.TabIndex = 66;
+            this.periodicity_safe_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.periodicity_safe_KeyDown);
+            this.periodicity_safe_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.periodicity_safe_KeyPress);
+            // 
+            // periodicity_normal_input
+            // 
+            this.periodicity_normal_input.Location = new System.Drawing.Point(1332, 603);
+            this.periodicity_normal_input.Name = "periodicity_normal_input";
+            this.periodicity_normal_input.Size = new System.Drawing.Size(100, 22);
+            this.periodicity_normal_input.TabIndex = 67;
+            this.periodicity_normal_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.periodicity_normal_KeyDown);
+            this.periodicity_normal_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.periodicity_normal_KeyPress);
+            // 
+            // periodicity_danger_input
+            // 
+            this.periodicity_danger_input.Location = new System.Drawing.Point(1332, 637);
+            this.periodicity_danger_input.Name = "periodicity_danger_input";
+            this.periodicity_danger_input.Size = new System.Drawing.Size(100, 22);
+            this.periodicity_danger_input.TabIndex = 68;
+            this.periodicity_danger_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.periodicity_danger_KeyDown);
+            this.periodicity_danger_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.periodicity_danger_KeyPress);
+            // 
+            // wave_safe_input
+            // 
+            this.wave_safe_input.Location = new System.Drawing.Point(1332, 669);
+            this.wave_safe_input.Name = "wave_safe_input";
+            this.wave_safe_input.Size = new System.Drawing.Size(100, 22);
+            this.wave_safe_input.TabIndex = 69;
+            this.wave_safe_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.safe_wave_KeyDown);
+            this.wave_safe_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.safe_wave_KeyPress);
+            // 
+            // wave_normal_input
+            // 
+            this.wave_normal_input.Location = new System.Drawing.Point(1332, 697);
+            this.wave_normal_input.Name = "wave_normal_input";
+            this.wave_normal_input.Size = new System.Drawing.Size(100, 22);
+            this.wave_normal_input.TabIndex = 70;
+            this.wave_normal_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.normal_wave_KeyDown);
+            this.wave_normal_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.normal_wave_KeyPress);
+            // 
+            // wave_danger_input
+            // 
+            this.wave_danger_input.Location = new System.Drawing.Point(1332, 729);
+            this.wave_danger_input.Name = "wave_danger_input";
+            this.wave_danger_input.Size = new System.Drawing.Size(100, 22);
+            this.wave_danger_input.TabIndex = 71;
+            this.wave_danger_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.danger_wave_KeyDown);
+            this.wave_danger_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.danger_wave_KeyPress);
+            // 
+            // label_periodicity_safe
+            // 
+            this.label_periodicity_safe.AutoSize = true;
+            this.label_periodicity_safe.Location = new System.Drawing.Point(1332, 573);
+            this.label_periodicity_safe.Name = "label_periodicity_safe";
+            this.label_periodicity_safe.Size = new System.Drawing.Size(139, 16);
+            this.label_periodicity_safe.TabIndex = 72;
+            this.label_periodicity_safe.Text = "label_periodicity_safe";
+            this.label_periodicity_safe.Visible = false;
+            // 
+            // label_periodicity_normal
+            // 
+            this.label_periodicity_normal.AutoSize = true;
+            this.label_periodicity_normal.Location = new System.Drawing.Point(1332, 606);
+            this.label_periodicity_normal.Name = "label_periodicity_normal";
+            this.label_periodicity_normal.Size = new System.Drawing.Size(154, 16);
+            this.label_periodicity_normal.TabIndex = 73;
+            this.label_periodicity_normal.Text = "label_periodicity_normal";
+            this.label_periodicity_normal.Visible = false;
+            // 
+            // label_periodicity_danger
+            // 
+            this.label_periodicity_danger.AutoSize = true;
+            this.label_periodicity_danger.Location = new System.Drawing.Point(1332, 640);
+            this.label_periodicity_danger.Name = "label_periodicity_danger";
+            this.label_periodicity_danger.Size = new System.Drawing.Size(156, 16);
+            this.label_periodicity_danger.TabIndex = 74;
+            this.label_periodicity_danger.Text = "label_periodicity_danger";
+            this.label_periodicity_danger.Visible = false;
+            // 
+            // label_wave_safe
+            // 
+            this.label_wave_safe.AutoSize = true;
+            this.label_wave_safe.Location = new System.Drawing.Point(1330, 672);
+            this.label_wave_safe.Name = "label_wave_safe";
+            this.label_wave_safe.Size = new System.Drawing.Size(109, 16);
+            this.label_wave_safe.TabIndex = 75;
+            this.label_wave_safe.Text = "label_wave_safe";
+            this.label_wave_safe.Visible = false;
+            // 
+            // label_wave_normal
+            // 
+            this.label_wave_normal.AutoSize = true;
+            this.label_wave_normal.Location = new System.Drawing.Point(1332, 700);
+            this.label_wave_normal.Name = "label_wave_normal";
+            this.label_wave_normal.Size = new System.Drawing.Size(124, 16);
+            this.label_wave_normal.TabIndex = 76;
+            this.label_wave_normal.Text = "label_wave_normal";
+            this.label_wave_normal.Visible = false;
+            // 
+            // label_wave_dander
+            // 
+            this.label_wave_dander.AutoSize = true;
+            this.label_wave_dander.Location = new System.Drawing.Point(1331, 732);
+            this.label_wave_dander.Name = "label_wave_dander";
+            this.label_wave_dander.Size = new System.Drawing.Size(126, 16);
+            this.label_wave_dander.TabIndex = 77;
+            this.label_wave_dander.Text = "label_wave_dander";
+            this.label_wave_dander.Visible = false;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1418, 717);
-            this.Controls.Add(this.label_height);
-            this.Controls.Add(this.label_width);
-            this.Controls.Add(this.label_length);
+            this.ClientSize = new System.Drawing.Size(1486, 850);
+            this.Controls.Add(this.label_wave_dander);
+            this.Controls.Add(this.label_wave_normal);
+            this.Controls.Add(this.label_wave_safe);
+            this.Controls.Add(this.label_periodicity_danger);
+            this.Controls.Add(this.label_periodicity_normal);
+            this.Controls.Add(this.label_periodicity_safe);
+            this.Controls.Add(this.wave_danger_input);
+            this.Controls.Add(this.wave_normal_input);
+            this.Controls.Add(this.wave_safe_input);
+            this.Controls.Add(this.periodicity_danger_input);
+            this.Controls.Add(this.periodicity_normal_input);
+            this.Controls.Add(this.periodicity_safe_input);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelHeight);
+            this.Controls.Add(this.labelWidth);
+            this.Controls.Add(this.labelLength);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -500,9 +701,9 @@
             this.Controls.Add(this.input_width);
             this.Controls.Add(this.input_length);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label_danger);
-            this.Controls.Add(this.label_normal);
-            this.Controls.Add(this.label_safe);
+            this.Controls.Add(this.labelDanger);
+            this.Controls.Add(this.labelNormal);
+            this.Controls.Add(this.labelSafe);
             this.Controls.Add(this.dangerWind);
             this.Controls.Add(this.normalWind);
             this.Controls.Add(this.safeWind);
@@ -576,9 +777,9 @@
         private System.Windows.Forms.TextBox safeWind;
         private System.Windows.Forms.TextBox normalWind;
         private System.Windows.Forms.TextBox dangerWind;
-        private System.Windows.Forms.Label label_safe;
-        private System.Windows.Forms.Label label_normal;
-        private System.Windows.Forms.Label label_danger;
+        private System.Windows.Forms.Label labelSafe;
+        private System.Windows.Forms.Label labelNormal;
+        private System.Windows.Forms.Label labelDanger;
         private System.Windows.Forms.Label label12;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.TextBox input_length;
@@ -587,9 +788,27 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label_length;
-        private System.Windows.Forms.Label label_width;
-        private System.Windows.Forms.Label label_height;
+        private System.Windows.Forms.Label labelLength;
+        private System.Windows.Forms.Label labelWidth;
+        private System.Windows.Forms.Label labelHeight;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox periodicity_safe_input;
+        private System.Windows.Forms.TextBox periodicity_normal_input;
+        private System.Windows.Forms.TextBox periodicity_danger_input;
+        private System.Windows.Forms.TextBox wave_safe_input;
+        private System.Windows.Forms.TextBox wave_normal_input;
+        private System.Windows.Forms.TextBox wave_danger_input;
+        private System.Windows.Forms.Label label_periodicity_safe;
+        private System.Windows.Forms.Label label_periodicity_normal;
+        private System.Windows.Forms.Label label_periodicity_danger;
+        private System.Windows.Forms.Label label_wave_safe;
+        private System.Windows.Forms.Label label_wave_normal;
+        private System.Windows.Forms.Label label_wave_dander;
     }
 }
 

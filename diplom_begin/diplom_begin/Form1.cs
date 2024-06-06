@@ -121,6 +121,15 @@ namespace diplom_begin
         private double safe_wind = 1;
         private double normal_wind = 1;
         private double danger_wind = 1;
+
+        private double safe_wave = 1;
+        private double normal_wave = 1;
+        private double danger_wave = 1;
+
+        private double safe_periodicity = 1;
+        private double normal_periodicity = 1;
+        private double danger_periodicity = 1;
+
         private double height = 1;
         private double width = 1;
         private double length = 1;
@@ -422,7 +431,7 @@ namespace diplom_begin
 
         private void safeWind_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, safeWind, ref safe_wind, label_safe, button2);
+            TextBox_KeyDown(sender, e, safeWind, ref safe_wind, labelSafe, button2);
         }
 
         private void normalWind_KeyPress(object sender, KeyPressEventArgs e)
@@ -432,7 +441,7 @@ namespace diplom_begin
 
         private void normalWind_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, normalWind, ref normal_wind, label_normal, button2);
+            TextBox_KeyDown(sender, e, normalWind, ref normal_wind, labelNormal, button2);
         }
 
         private void dangerWind_KeyPress(object sender, KeyPressEventArgs e)
@@ -442,7 +451,7 @@ namespace diplom_begin
 
         private void dangerWind_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, dangerWind, ref danger_wind, label_danger, button2);
+            TextBox_KeyDown(sender, e, dangerWind, ref danger_wind, labelDanger, button2);
         }
 
         private void length_KeyPress(object sender, KeyPressEventArgs e)
@@ -452,7 +461,7 @@ namespace diplom_begin
 
         private void length_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, input_length, ref length, label_length, button2);
+            TextBox_KeyDown(sender, e, input_length, ref length, labelLength, button2);
         }
 
         private void width_KeyPress(object sender, KeyPressEventArgs e)
@@ -462,7 +471,7 @@ namespace diplom_begin
 
         private void width_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, input_width, ref width, label_width, button2);
+            TextBox_KeyDown(sender, e, input_width, ref width, labelWidth, button2);
         }
 
         private void height_KeyPress(object sender, KeyPressEventArgs e)
@@ -472,7 +481,67 @@ namespace diplom_begin
 
         private void height_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBox_KeyDown(sender, e, input_height, ref height, label_height, button2);
+            TextBox_KeyDown(sender, e, input_height, ref height, labelHeight, button2);
+        }
+
+        private void periodicity_safe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, periodicity_safe_input);
+        }
+
+        private void periodicity_safe_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, periodicity_safe_input, ref safe_periodicity, label_periodicity_safe, button2);
+        }
+
+        private void periodicity_normal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, periodicity_normal_input);
+        }
+
+        private void periodicity_normal_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, periodicity_normal_input, ref normal_periodicity, label_periodicity_normal, button2);
+        }
+
+        private void periodicity_danger_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, periodicity_danger_input);
+        }
+
+        private void periodicity_danger_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, periodicity_danger_input, ref danger_periodicity, label_periodicity_danger, button2);
+        }
+
+        private void safe_wave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, wave_safe_input);
+        }
+
+        private void safe_wave_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, wave_safe_input, ref safe_wave, label_wave_safe, button2);
+        }
+
+        private void normal_wave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, wave_normal_input);
+        }
+
+        private void normal_wave_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, wave_normal_input, ref normal_wave, label_wave_normal, button2);
+        }
+
+        private void danger_wave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, wave_danger_input);
+        }
+
+        private void danger_wave_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, wave_danger_input, ref danger_wave, label_wave_dander, button2);
         }
 
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e) // установка точек начала и конца 
@@ -953,12 +1022,12 @@ namespace diplom_begin
                 pictureBox2.Image = images;
                 button2.Visible = false;
                 label_osad.Visible = false;
-                label_safe.Visible = false;
-                label_normal.Visible = false;
-                label_danger.Visible = false;   
-                label_height.Visible = false;
-                label_width.Visible = false;
-                label_length.Visible = false;
+                labelSafe.Visible = false;
+                labelNormal.Visible = false;
+                labelDanger.Visible = false;   
+                labelHeight.Visible = false;
+                labelWidth.Visible = false;
+                labelLength.Visible = false;
                 input_osad.Visible = true;
                 input_osad.Text = string.Empty;
                 label4.Visible = false;
