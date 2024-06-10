@@ -121,6 +121,8 @@ namespace diplom_begin
         private double safe_wind = 1;
         private double normal_wind = 1;
         private double danger_wind = 1;
+        private double shipSpeed = 1;
+        private double varBaseFuel = 1;
 
         private double safe_wave = 1;
         private double normal_wave = 1;
@@ -413,6 +415,24 @@ namespace diplom_begin
                 textBox.Visible = false;
                 button.Visible = true;
             }
+        }
+
+        private void baseFuel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, baseFuel);
+        }
+        private void baseFuel_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, baseFuel, ref varBaseFuel, label_base_fuel, button2);
+        }
+
+        private void baseSpeedOfShip_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e, baseSpeedOfShip);
+        }
+        private void baseSpeedOfShip_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox_KeyDown(sender, e, baseSpeedOfShip, ref shipSpeed, label_base_speed_of_ship, button2);
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e) // обработчик для поля ввода осадки
