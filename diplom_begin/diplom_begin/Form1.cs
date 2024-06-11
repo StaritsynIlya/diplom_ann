@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace diplom_begin
 {
     public partial class Form1 : Form //нумерация объектов
@@ -132,7 +134,7 @@ namespace diplom_begin
         private double normal_periodicity = 1;
         private double danger_periodicity = 1;
 
-        private double height = 1;
+        private double height = 2;
         private double width = 1;
         private double length = 1;
         private double square = 1;
@@ -142,18 +144,18 @@ namespace diplom_begin
             public int X { get; set; }
             public int Y { get; set; }
             public bool IsWall { get; set; }
-            public float Price { get; set; }
-            public int GCost { get; set; }
-            public int HCost { get; set; }
-            public int FCost { get { return GCost + HCost; } }
+            public double Speed { get; set; }
+            public double GCost { get; set; }
+            public double HCost { get; set; }
+            public double FCost { get { return GCost + HCost; } }
             public Node Parent { get; set; }
 
-            public Node(int x, int y, bool isWall, float price = 0)
+            public Node(int x, int y, bool isWall, double speed)
             {
                 X = x;
                 Y = y;
-                IsWall = isWall;
-                Price = isWall ? 0 : price; ; 
+                IsWall = isWall; 
+                Speed = speed;
             }
         }
 
@@ -207,12 +209,24 @@ namespace diplom_begin
             private Node[,] _grid;
             private List<Node> _openList;
             private List<Node> _closedList;
+            private double _height;
+            private double _width;
+            private double _length;
+            private double _square;
+            private double _osad;
+            private double _f_base;
 
-            public AStar(Node[,] grid)
+            public AStar(Node[,] grid, double height, double width, double length, double square, double osad, double f_base)
             {
                 _grid = grid;
                 _openList = new List<Node>();
                 _closedList = new List<Node>();
+                _height = height;
+                _width = width;
+                _length = length;
+                _square = square;
+                _osad = osad;
+                _f_base = f_base;
             }
 
             private List<Node> GetNeighbors(Node node)
@@ -279,10 +293,10 @@ namespace diplom_begin
                         {
                             continue;
                         }
-                        int newGCost = currentNode.GCost + GetDistance(currentNode, neighbor, windX, windY);
+                        double newGCost = currentNode.GCost + GetDistance(currentNode, neighbor, windX, windY);
                         if (newGCost < neighbor.GCost || !_openList.Contains(neighbor))
                         {
-                            neighbor.GCost = newGCost;
+                            neighbor.GCost = newGCost + GetWindCoef(currentNode, neighbor, windX, windY);
                             neighbor.HCost = GetDistance(neighbor, endNode, windX, windY);
                             neighbor.Parent = currentNode;
                             if (!_openList.Contains(neighbor))
@@ -294,7 +308,7 @@ namespace diplom_begin
                 }
                 return null;
             }
-            // 
+
             private Node GetLowestFCostNode(List<Node> nodes)
             {
                 Node lowestFCostNode = nodes[0];
@@ -309,7 +323,7 @@ namespace diplom_begin
             }
 
             // Ищем дистанцию от текущей клетки до конечной
-            private int GetDistance(Node nodeA, Node nodeB, int windX, int windY)
+            private double GetDistance(Node nodeA, Node nodeB, int windX, int windY)
             {
                 int distanceX = Math.Abs(nodeA.X - nodeB.X);
                 int distanceY = Math.Abs(nodeA.Y - nodeB.Y);
@@ -323,6 +337,13 @@ namespace diplom_begin
                 {
                     baseCost = 14 * distanceX + 10 * (distanceY - distanceX);
                 }
+
+                return baseCost;
+            }
+
+            private double GetWindCoef(Node nodeA, Node nodeB, int windX, int windY)
+            {
+                double price = 1;
 
                 // Рассчитываем направление движения
                 int moveX = nodeB.X - nodeA.X;
@@ -338,25 +359,41 @@ namespace diplom_begin
                 double cosTheta = dotProduct / (moveLength * windLength);
 
                 // Определяем коэффициент в зависимости от угла
-                double windFactor;
-                if (cosTheta > 0.5) // По ветру
+                double coefSpeed = 1;
+
+                switch (Math.Round(cosTheta, 1))
                 {
-                    windFactor = 0.8; // Пример коэффициента, уменьшающего стоимость
-                }
-                else if (cosTheta < -0.5) // Против ветра
-                {
-                    windFactor = 1.2; // Пример коэффициента, увеличивающего стоимость
-                }
-                else
-                {
-                    windFactor = 1.0; // Ветер влияет нейтрально
+                    case 1:
+                        coefSpeed = -1;
+                        _square = _width * (_height - _osad);
+                        break;
+                    case 0.7:
+                        coefSpeed = -0.5;
+                        _square = Math.Sqrt(_width * _width + _length * _length) * (_height - _osad);
+                        break;
+                    case 0:
+                        coefSpeed = 1;
+                        _square = _length * (_height - _osad);
+                        break;
+                    case -1:
+                        coefSpeed = 1;
+                        _square = _width * (_height - _osad);
+                        break;
+                    case -0.7:
+                        coefSpeed = 0.5;
+                        _square = Math.Sqrt(_width * _width + _length * _length) * (_height - _osad);
+                        break;
                 }
 
-                // Применяем коэффициент влияния ветра
-                double adjustedCost = baseCost * windFactor;
-                return (int)adjustedCost;
+                //price = f_base * (1 + square * speed * 0.0005); //+ heightWave * coefWave * periodicity);
+
+                //price = f_base * (1 + Square * Speed * coefSpeed + HeightWave * coefWave * Periodicity); ----- ЭТО САМА ФОРМУЛА   
+
+                price = _f_base * (1 + _square * nodeB.Speed * coefSpeed);
+
+                return price;
             }
-            private List<Node> GetPath(Node endNode)
+                private List<Node> GetPath(Node endNode)
             {
                 List<Node> path = new List<Node>();
                 Node currentNode = endNode;
@@ -1052,6 +1089,7 @@ namespace diplom_begin
                 input_osad.Text = string.Empty;
                 label4.Visible = false;
                 label4.Text = string.Empty;
+                button12.Visible = false;
             }
         }
         private void timer_Tick(object sender, EventArgs e)
@@ -1173,7 +1211,7 @@ namespace diplom_begin
 
                 }
             }
-            double speed;
+            double speed = 0;
             for (int ix = 0; ix < nx; ix++)
             {
                 for (int iy = 0; iy < ny; iy++)
@@ -1196,16 +1234,13 @@ namespace diplom_begin
                             case 3:
                                 speed = danger_wind;
                                 break;
-                            default:
-                                speed = 0;
-                                break;
                         }
                     }
                     //price = f_base * (1 + square * speed * 0.0005); //+ heightWave * coefWave * periodicity);
-                    grid[ix, iy] = new Node(ix, iy, isWall);
+                    grid[ix, iy] = new Node(ix, iy, isWall, speed);
                 }
             }
-            AStar aStar = new AStar(grid);
+            AStar aStar = new AStar(grid, height, width, length, square, osad, varBaseFuel); //
             if (grid[grid[ib, jb].X - 1, grid[ib, jb].Y - 1].IsWall &&
                 grid[grid[ib, jb].X, grid[ib, jb].Y - 1].IsWall &&
                 grid[grid[ib, jb].X - 1, grid[ib, jb].Y].IsWall &&
@@ -1230,6 +1265,8 @@ namespace diplom_begin
 
                 if (path != null)
                 {
+                    label4.Text = "стоимость пути " + path.Last().GCost;
+                    label4.Visible = true;
                     foreach (Node node in path)
                     {
                         X1[node.X, node.Y] = WAY;

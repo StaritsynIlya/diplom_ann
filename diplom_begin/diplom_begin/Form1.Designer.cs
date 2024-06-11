@@ -31,14 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button12 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.input_osad = new System.Windows.Forms.TextBox();
             this.label_osad = new System.Windows.Forms.Label();
@@ -110,9 +106,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(28, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1103, 808);
+            this.pictureBox2.Size = new System.Drawing.Size(1119, 826);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -121,13 +117,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
             // 
             // button2
             // 
@@ -140,20 +129,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 29;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(0, 0);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 28;
             // 
             // label1
             // 
@@ -170,20 +145,13 @@
             // button12
             // 
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(0, 1);
+            this.button12.Location = new System.Drawing.Point(12, 12);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
             this.button12.TabIndex = 17;
             this.button12.Text = "открыть";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(81, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 27;
             // 
             // label3
             // 
@@ -229,7 +197,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(1240, 818);
+            this.label4.Location = new System.Drawing.Point(1133, 818);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(218, 16);
             this.label4.TabIndex = 19;
@@ -388,7 +356,6 @@
             this.dangerWind.Size = new System.Drawing.Size(100, 22);
             this.dangerWind.TabIndex = 46;
             this.dangerWind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dangerWind_KeyDown);
-            this.dangerWind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dangerWind_KeyPress);
             // 
             // labelSafe
             // 
@@ -831,13 +798,9 @@
             this.Controls.Add(this.input_osad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -854,14 +817,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox input_osad;
         private System.Windows.Forms.Label label_osad;
