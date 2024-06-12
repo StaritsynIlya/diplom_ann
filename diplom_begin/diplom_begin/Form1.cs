@@ -244,7 +244,7 @@ namespace diplom_begin
                 {
                     neighbor.Add(_grid[node.X + 1, node.Y]);
                 }
-                if ((node.X < _grid.GetLength(0) - 1) && (node.Y <
+                if ((node.X < _grid.GetLength(0) - 2) && (node.Y <
                 _grid.GetLength(1) - 1))
                 {
                     neighbor.Add(_grid[node.X + 1, node.Y + 1]);
@@ -253,15 +253,15 @@ namespace diplom_begin
                 {
                     neighbor.Add(_grid[node.X, node.Y - 1]);
                 }
-                if ((node.X < _grid.GetLength(0) - 1) && (node.Y > 0))
+                if ((node.X < _grid.GetLength(0) - 2) && (node.Y > 0))
                 {
                     neighbor.Add(_grid[node.X + 1, node.Y - 1]);
                 }
-                if (node.Y < _grid.GetLength(1) - 1)
+                if (node.Y < _grid.GetLength(1) - 2)
                 {
                     neighbor.Add(_grid[node.X, node.Y + 1]);
                 }
-                if ((node.Y < _grid.GetLength(0) - 1) && (node.X > 0))
+                if ((node.Y < _grid.GetLength(0) - 2) && (node.X > 0))
                 {
                     neighbor.Add(_grid[node.X - 1, node.Y + 1]);
                 }
@@ -293,11 +293,11 @@ namespace diplom_begin
                         {
                             continue;
                         }
-                        double newGCost = currentNode.GCost + GetDistance(currentNode, neighbor, windX, windY);
+                        double newGCost = currentNode.GCost + GetDistance(currentNode, neighbor);
                         if (newGCost < neighbor.GCost || !_openList.Contains(neighbor))
                         {
                             neighbor.GCost = newGCost + GetWindCoef(currentNode, neighbor, windX, windY);
-                            neighbor.HCost = GetDistance(neighbor, endNode, windX, windY);
+                            neighbor.HCost = GetDistance(neighbor, endNode);
                             neighbor.Parent = currentNode;
                             if (!_openList.Contains(neighbor))
                             {
@@ -323,27 +323,24 @@ namespace diplom_begin
             }
 
             // Ищем дистанцию от текущей клетки до конечной
-            private double GetDistance(Node nodeA, Node nodeB, int windX, int windY)
+            private double GetDistance(Node nodeA, Node nodeB)
             {
                 int distanceX = Math.Abs(nodeA.X - nodeB.X);
                 int distanceY = Math.Abs(nodeA.Y - nodeB.Y);
-                int baseCost;
 
                 if (distanceX > distanceY)
                 {
-                    baseCost = 14 * distanceY + 10 * (distanceX - distanceY);
+                    return 14 * distanceY + 10 * (distanceX - distanceY);
                 }
                 else
                 {
-                    baseCost = 14 * distanceX + 10 * (distanceY - distanceX);
+                    return 14 * distanceX + 10 * (distanceY - distanceX);
                 }
-
-                return baseCost;
             }
 
             private double GetWindCoef(Node nodeA, Node nodeB, int windX, int windY)
             {
-                double price = 1;
+                double price = 0;
 
                 // Рассчитываем направление движения
                 int moveX = nodeB.X - nodeA.X;
@@ -364,11 +361,11 @@ namespace diplom_begin
                 switch (Math.Round(cosTheta, 1))
                 {
                     case 1:
-                        coefSpeed = -1;
+                        coefSpeed = 1;
                         _square = _width * (_height - _osad);
                         break;
                     case 0.7:
-                        coefSpeed = -0.5;
+                        coefSpeed = 0.5;
                         _square = Math.Sqrt(_width * _width + _length * _length) * (_height - _osad);
                         break;
                     case 0:
@@ -376,11 +373,11 @@ namespace diplom_begin
                         _square = _length * (_height - _osad);
                         break;
                     case -1:
-                        coefSpeed = 1;
+                        coefSpeed = -1;
                         _square = _width * (_height - _osad);
                         break;
                     case -0.7:
-                        coefSpeed = 0.5;
+                        coefSpeed = -0.5;
                         _square = Math.Sqrt(_width * _width + _length * _length) * (_height - _osad);
                         break;
                 }
@@ -389,9 +386,9 @@ namespace diplom_begin
 
                 //price = f_base * (1 + Square * Speed * coefSpeed + HeightWave * coefWave * Periodicity); ----- ЭТО САМА ФОРМУЛА   
 
-                price = _f_base * (1 + _square * nodeB.Speed * coefSpeed);
+                price = _f_base * (1 + _square * nodeB.Speed * coefSpeed * 0.0005);
 
-                return price;
+                return price*30;
             }
                 private List<Node> GetPath(Node endNode)
             {
@@ -1265,7 +1262,7 @@ namespace diplom_begin
 
                 if (path != null)
                 {
-                    label4.Text = "стоимость пути " + path.Last().GCost;
+                    label4.Text = "Стоимость пути " + path.Last().GCost;
                     label4.Visible = true;
                     foreach (Node node in path)
                     {
